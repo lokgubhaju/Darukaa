@@ -57,7 +57,7 @@ export default function Navbar() {
         <li className={activeSection === 'services' ? s.active : ''}>
           <Link href="#services">Services</Link>
         </li>
-        <li className={activeSection === 'contact' ? "s.active" : ''}>
+        <li className={activeSection === 'contact' ? s.active : ''}>
           <Link href="#contact">Contact us</Link>
         </li>
       </ul>
