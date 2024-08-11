@@ -1,5 +1,5 @@
 .navigation {
-  @apply w-full bg-gray sticky flex top-0 justify-between px-10 z-10;
+  @apply w-full bg-gray sticky flex top-0 justify-between z-10 container mx-auto;
   &__lists {
     @apply list-none hidden md:flex items-center;
     gap: 20px;
@@ -16,7 +16,7 @@
       }
     }
     li.active a {
-      color: #0070f3;
+      color: #32aa8d;
     }
   }
 

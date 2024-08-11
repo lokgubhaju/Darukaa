@@ -8,6 +8,7 @@ import GridCards from "@/Components/GridCards/GridCards";
 import TextwithMedia from "@/Components/TextwithMedia/TextwithMedia";
 import Footer from "@/Components/Footer/Footer";
 import GalleryCards from "@/Components/Gallery/Gallery";
+import AboutCards from "@/Components/About/About";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <Navbar />
       <div>
         {/* Hero Section */}
-        <section className={cn(s["home__hero"])} id="hero">
+        <section className={cn(s["home__hero"], "container")} id="hero">
           <video
             autoPlay
             muted
@@ -39,7 +40,7 @@ export default function Home() {
         <section
           className={cn(
             s["home__introduction"],
-            "flex flex-col md:flex-row bg-white relative rounded-20 mt-10"
+            "flex flex-col md:flex-row bg-white relative rounded-20 mt-10 container"
           )}
           id="introduction"
         >
@@ -96,7 +97,7 @@ export default function Home() {
         <section
           className={cn(
             s["home__what-we-do"],
-            "rounded-20 overflow-hidden mt-10"
+            "rounded-20 overflow-hidden mt-10 container"
           )}
           id="what-we-do"
         >
@@ -104,33 +105,36 @@ export default function Home() {
         </section>
 
         {/* Services | How we do it */}
-        <section className={cn(s["home__services"], "mt-10")} id="services">
+        <section
+          className={cn(s["home__services"], "mt-10 container")}
+          id="services"
+        >
           <StackCards />
         </section>
 
         {/* Solutions */}
-        <section className={cn(s["home__solutions"], "mt-10")} id="solutions">
+        <section
+          className={cn(s["home__solutions"], "mt-10 container")}
+          id="solutions"
+        >
           <TextwithMedia />
         </section>
 
         {/* Why it matters */}
-        <section className={cn(s['home__why-it-matters'], 'mt-10')}>
+        <section className={cn(s["home__why-it-matters"], "mt-10 container")}>
           <GalleryCards />
         </section>
 
         {/* Contact */}
-        {<section className={cn(s["home__contact"], "mt-10")} id="contact">
-            <Image
-              src={"/images/about-us.png"}
-              alt=""
-              layout="responsive"
-              width={100}
-              height={100}
-               className="w-full h-full object-cover"
-            />
-        </section> }
 
-        <Footer />
+        {/* About us section */}
+        <section className={cn(s["home__about"], "container mt-10")}>
+          <AboutCards />
+        </section>
+
+        <section className="container">
+          <Footer />
+        </section>
       </div>
     </main>
   );

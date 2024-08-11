@@ -68,7 +68,10 @@ body {
   }
   .body-copy-md-max {
     @apply text-body-copy-md-max;
-  
+  }
+
+  .container {
+    @apply max-w-screen-xl mx-auto px-0 overflow-visible;
   }
 }
 

@@ -1,7 +1,7 @@
 .grid-cards {
   height: 100%;
   &__lists {
-    @apply flex flex-wrap gap-4 content-center justify-center;
+    @apply flex flex-wrap gap-4;
     &--card {
       width: 150px;
       height: 220px;
