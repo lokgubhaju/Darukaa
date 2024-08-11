@@ -18,7 +18,7 @@ export default function Home() {
       <div>
 
         {/* Hero Section */}
-        <section className={cn(s["home__hero"])}>
+        <section className={cn(s["home__hero"])} id="hero">
           <video
             autoPlay
             muted
