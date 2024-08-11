@@ -85,7 +85,7 @@ export default function TextwithMedia() {
           >
             Why us
           </h1>
-          <p
+          <div
             className={cn(
               s["home__introduction__content--body-copy"],
               "body-copy-md-max md:body-copy"
@@ -94,7 +94,7 @@ export default function TextwithMedia() {
             <li>Enhancing Monitoring</li>
             <li>Streamlining Assessments</li>
             <li>Aligning with Global Standards</li>
-          </p>
+          </div>
         </div>
         <div className="w-full md:w-1/2 p-4">
           <Image

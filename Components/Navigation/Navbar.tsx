@@ -46,7 +46,7 @@ export default function Navbar() {
         <span className={s.bar}>Services</span>
       </div>
       <ul className={cn(s["navigation__lists"])}>
-        <li className={activeSection === "home" ? s.active : ""}>
+        <li className={activeSection === "hero" ? s.active : ""}>
           <Link href="/">Home</Link>
         </li>
         <li className={activeSection === "introduction" ? s.active : ""}>
