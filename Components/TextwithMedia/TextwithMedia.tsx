@@ -7,9 +7,10 @@ export default function TextwithMedia() {
     <>
       <section
         className={cn(
-          s["home__introduction"],
+          s["home__solutions"],
           "flex flex-col md:flex-row bg-white relative rounded-20 mt-10"
         )}
+        id="solutions"
       >
         <div className="w-full md:w-1/2 p-4">
           <Image
