@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import cn from "classnames";
 import s from "./StackCards.module.scss";
 import Image from "next/image";
@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({
   imageAlt,
   posterUrl,
 }) => (
-  <li className={cn(s.card)} id={id}>
+  <li className={cn(s["card"])} id={id}>
     <div className={cn(s["card-content"])}>
       <div>
         <p className={cn(s["card-content__pretitle"])}>{pretitle}</p>
@@ -63,10 +63,11 @@ const Panel: React.FC = () => {
     {
       id: "card-1",
       pretitle: "01",
-      headline: "Multimodal data collection",
-      body: "integrating different sources of data such as satellite & drone data, geospatial layers, IoT devices and ground collected data ",
-      imageUrl: "/images/how_we_do_it_1.jpg",
-      altText: "card-one",
+      headline: "Blockchain Technology",
+      body: "the credits are registered on blockchain to ensure high integrity",
+      videoUrl: "/videos/one.mp4",
+      altText: "card-three",
+      posterUrl: "/images/video-thumbnail.png",
     },
     {
       id: "card-2",
@@ -79,11 +80,10 @@ const Panel: React.FC = () => {
     {
       id: "card-3",
       pretitle: "03",
-      headline: "Blockchain Technology",
-      body: "the credits are registered on blockchain to ensure high integrity",
-      videoUrl: "/videos/one.mp4",
-      altText: "card-three",
-      posterUrl: "/images/video-thumbnail.png",
+      headline: "Multimodal data collection",
+      body: "integrating different sources of data such as satellite & drone data, geospatial layers, IoT devices and ground collected data ",
+      imageUrl: "/images/how_we_do_it_1.jpg",
+      altText: "card-one",
     },
     {
       id: "card-4",
@@ -101,10 +101,13 @@ const Panel: React.FC = () => {
       imageUrl: "/images/how_we_do_it_1.jpg",
       altText: "card-three",
     },
-    // Add more cards as needed
   ];
   return (
     <main>
+      <div className={cn(s["stack-cards__text"], "text-neutral-600")}>
+        <p className="pretitle">How we do it</p>
+        <p className="h1-md-max md:h1">Services</p>
+      </div>
       <ul>
         {cards.map((card) => (
           <Card

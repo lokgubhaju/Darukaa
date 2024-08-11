@@ -4,6 +4,9 @@ import Navbar from "@/Components/Navigation/Navbar";
 import cn from "classnames";
 import s from "../styles/home.module.scss";
 import StackCards from "@/Components/StackCards/StackCards";
+import GridCards from "@/Components/GridCards/GridCards";
+import TextwithMedia from "@/Components/TextwithMedia/TextwithMedia";
+import Footer from "@/Components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -13,6 +16,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <div>
+
         {/* Hero Section */}
         <section className={cn(s["home__hero"])}>
           <video
@@ -45,13 +49,28 @@ export default function Home() {
               "w-full md:w-1/2 text-black p-10"
             )}
           >
-            <p className={cn(s["home__introduction__content--pretitle"])}>
+            <p
+              className={cn(
+                s["home__introduction__content--pretitle"],
+                "pretitle"
+              )}
+            >
               Introduction
             </p>
-            <h1 className={cn(s["home__introduction__content--headline"])}>
+            <h1
+              className={cn(
+                s["home__introduction__content--headline"],
+                "h1-md-max md:h1"
+              )}
+            >
               Who we are
             </h1>
-            <p className={cn(s["home__introduction__content--body-copy"])}>
+            <p
+              className={cn(
+                s["home__introduction__content--body-copy"],
+                "body-copy-md-max md:body-copy"
+              )}
+            >
               We enhance permanence, additionality & accurate environmental
               measurements through carbon credit principles, facilitating
               impactful climate finance solutions. <br />
@@ -73,11 +92,31 @@ export default function Home() {
           </div>
         </section>
 
+        {/* What we do */}
+        <section
+          className={cn(
+            s["home__what-we-do"],
+            "mt-10 rounded-20 overflow-hidden"
+          )}
+          id="what-we-do"
+        >
+          <GridCards />
+        </section>
+
         {/* Services | How we do it */}
-        <section className={cn(s["home__services"], 'mt-10')} id="services">
+        <section className={cn(s["home__services"], "mt-10")} id="services">
           <StackCards />
         </section>
-        <section className={cn(s["home__contact"])} id="contact"></section>
+
+        {/* Solutions */}
+        <section className={cn(s["home__solutions"], "mt-10")} id="solutions">
+          <TextwithMedia />
+        </section>
+
+        {/* Contact */}
+        {/* <section className={cn(s["home__contact"])} id="contact"></section> */}
+
+        <Footer />
       </div>
     </main>
   );

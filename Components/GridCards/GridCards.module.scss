@@ -1,0 +1,26 @@
+.grid-cards {
+  height: 100%;
+  &__lists {
+    @apply flex flex-wrap gap-4 content-center justify-center;
+    &--card {
+      width: 150px;
+      height: 220px;
+      @apply rounded-xl overflow-hidden p-4;
+      vertical-align:middle &__number {
+        color: gray;
+      }
+      &__title {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &__content {
+    &--headline {
+      font-size: 40px;
+    }
+    &--body-copy {
+      font-size: 20px;
+    }
+  }
+}

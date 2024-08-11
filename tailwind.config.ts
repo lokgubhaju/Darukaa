@@ -16,6 +16,7 @@ const config: Config = {
         lg: "1024px",
         lg2: "1200px",
         xxl: "1792px",
+        "2/5": "40vh",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -26,8 +27,15 @@ const config: Config = {
         gray: "#d8d2c6",
       },
       borderRadius: {
-        20: '20px'
-      }
+        20: "20px",
+      },
+      fontSize: {
+        pretitle: "20px",
+        h1: "54px",
+        "h1-md-max": "36px",
+        "body-copy": "20px",
+        "body-copy-md-max": "16px",
+      },
     },
   },
   plugins: [],

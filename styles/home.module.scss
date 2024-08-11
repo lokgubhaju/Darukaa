@@ -1,52 +1,50 @@
 .home {
-    @apply bg-gray;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    @screen md-max {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
+  @apply bg-gray;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  @screen md-max {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 
-    &__hero {
-        @apply bg-gray overflow-hidden relative;
-        height: 600px;
-        border-radius: 40px;
-        @screen xxl {
-            height: 800px;
-        }
-        &__overlay {
-            position: absolute;
-            top: 50%;
-            left: 40%;
-            transform: translate(-50%, -50%);
-            h1 {
-                font-size: 52px;
-            }
-            p {
-                font-size: 36px;
-            }
-        }
+  &__hero {
+    @apply bg-gray overflow-hidden relative;
+    height: 600px;
+    border-radius: 40px;
+    @screen xxl {
+      height: 800px;
     }
+    &__overlay {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      h1 {
+        font-size: 52px;
+      }
+      p {
+        font-size: 36px;
+      }
+    }
+  }
 
-    &__introduction{
-        &__content {
-            &--pretitle {
-                font-size: 18px;
-            }
-            &--headline {
-                font-size: 54px;
-            }
-            &--body-copy{
-                font-size: 20px;
-                margin-top: 4rem;
-            }
+  &__introduction {
+    &__content {
+      &--body-copy {
+        margin-top: 2rem;
+        @screen md {
+          margin-top: 4rem;
         }
+      }
     }
+  }
 
-    &__services {
-    }
-    &__contact {
-        height: 100vh;
-        background-color: white;
-    }
+  &__services {
+  }
+  &__solutions {
+  }
+  &__contact {
+    height: 100vh;
+    background-color: white;
+  }
 }

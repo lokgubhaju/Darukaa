@@ -26,8 +26,11 @@
 
 .card {
   position: sticky;
-  top: 100px;
   padding-top: calc(var(--index) * var(--card-top-offset));
+  top: 150px;
+  @screen md {
+    top: 250px;
+  }
 }
 
 .card-content {
@@ -43,7 +46,7 @@
   align-items: stretch;
   padding: 1.4em;
   @screen md-max {
-    @apply flex flex-col;
+    @apply flex flex-col gap-4;
   }
 
   &__headline {
@@ -73,7 +76,7 @@
 .card-content > figure {
   grid-area: img;
   overflow: hidden;
-  border-radius: 0.4em;
+  border-radius: 1em;
 }
 
 .card-content > figure > img {
@@ -113,5 +116,12 @@
     to {
       transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
     }
+  }
+}
+.stack-cards__text {
+  position: sticky;
+  top: 60px;
+  @screen md {
+    top: 100px;
   }
 }
