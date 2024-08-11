@@ -16,7 +16,7 @@ const config: Config = {
         lg: "1024px",
         lg2: "1200px",
         xxl: "1792px",
-        "2/5": "40vh",
+        "2/5": "40vh"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

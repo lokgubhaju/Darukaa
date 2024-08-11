@@ -7,6 +7,7 @@ import StackCards from "@/Components/StackCards/StackCards";
 import GridCards from "@/Components/GridCards/GridCards";
 import TextwithMedia from "@/Components/TextwithMedia/TextwithMedia";
 import Footer from "@/Components/Footer/Footer";
+import GalleryCards from "@/Components/Gallery/Gallery";
 
 export default function Home() {
   return (
@@ -16,7 +17,6 @@ export default function Home() {
       </Head>
       <Navbar />
       <div>
-
         {/* Hero Section */}
         <section className={cn(s["home__hero"])} id="hero">
           <video
@@ -111,6 +111,11 @@ export default function Home() {
         {/* Solutions */}
         <section className={cn(s["home__solutions"], "mt-10")} id="solutions">
           <TextwithMedia />
+        </section>
+
+        {/* Why it matters */}
+        <section className={cn(s['home__why-it-matters'], 'mt-10')}>
+          <GalleryCards />
         </section>
 
         {/* Contact */}

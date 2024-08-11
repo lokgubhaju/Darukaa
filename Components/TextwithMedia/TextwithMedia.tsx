@@ -8,7 +8,7 @@ export default function TextwithMedia() {
       <section
         className={cn(
           s["home__solutions"],
-          "flex flex-col md:flex-row bg-white relative rounded-20 mt-10"
+          "flex flex-col md:flex-row bg-white h-max-1/2 relative rounded-20 mt-10"
         )}
         id="solutions"
       >
@@ -19,7 +19,7 @@ export default function TextwithMedia() {
             layout="responsive"
             width={100}
             height={100}
-            className="rounded-xl overflow-hidden"
+            className="rounded-xl !h-full object-cover overflow-hidden"
           />
         </div>
         <div
@@ -42,7 +42,7 @@ export default function TextwithMedia() {
               "h1-md-max md:h1"
             )}
           >
-            Who we do
+            Why we do
           </h1>
           <p
             className={cn(
@@ -52,7 +52,7 @@ export default function TextwithMedia() {
           >
             We believe carbon and nature-based credits are the most scalable
             ways to channel investments into climate solutions, addressing the
-            Earth's biggest challenge.​
+            Earth&apos;s biggest challenge.​
           </p>
         </div>
       </section>
@@ -100,10 +100,10 @@ export default function TextwithMedia() {
           <Image
             src={"/images/intro.jpg"}
             alt=""
-            layout="responsive"
             width={100}
             height={100}
-            className="rounded-xl overflow-hidden"
+            layout="responsive"
+            className="rounded-xl !h-full object-cover overflow-hidden"
           />
         </div>
       </section>
