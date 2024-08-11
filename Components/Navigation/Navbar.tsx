@@ -19,7 +19,7 @@ export default function Navbar() {
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop - sectionHeight / 2) {
+      if (window.scrollY >= sectionTop - sectionHeight / 10) {
         currentSection = section.getAttribute('id');
       }
     });
@@ -54,10 +54,16 @@ export default function Navbar() {
         <li className={activeSection === 'introduction' ? s.active : ''}>
           <Link href="#introduction">Introduction</Link>
         </li>
+        <li className={activeSection === 'what-we-do' ? s.active : ''}>
+          <Link href="#what-we-do">What we do</Link>
+        </li>
         <li className={activeSection === 'services' ? s.active : ''}>
           <Link href="#services">Services</Link>
         </li>
-        <li className={activeSection === 'contact' ? "s.active" : ''}>
+        <li className={activeSection === 'solutions' ? s.active : ''}>
+          <Link href="#solutions">Solutions</Link>
+        </li>
+        <li className={activeSection === 'contact' ? s.active : ''}>
           <Link href="#contact">Contact us</Link>
         </li>
       </ul>

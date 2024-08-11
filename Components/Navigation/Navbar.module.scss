@@ -1,22 +1,22 @@
 .navigation {
-    @apply w-full bg-gray sticky flex top-0 justify-between px-10 z-10;
-    &__lists {
-        @apply list-none md:flex items-center;
-        gap: 20px;
-        height: 80px;
-        &-item{
-            min-width: 150px;
-        }
-        li {
-            font-size: 18px;
-            a {
-                text-decoration: none;
-                color: #333;
-                transition: color 0.3s ease;
-            }
-        }
-        li.active a {
-            color: #0070f3;
-        }
+  @apply w-full bg-gray sticky flex top-0 justify-between px-10 z-10;
+  &__lists {
+    @apply list-none md:flex items-center;
+    gap: 20px;
+    height: 80px;
+    &-item {
+      min-width: 150px;
     }
+    li {
+      font-size: 18px;
+      a {
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s ease;
+      }
+    }
+    li.active a {
+      color: #0070f3;
+    }
+  }
 }
