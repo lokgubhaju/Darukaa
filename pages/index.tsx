@@ -16,6 +16,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <div>
+
         {/* Hero Section */}
         <section className={cn(s["home__hero"])}>
           <video
