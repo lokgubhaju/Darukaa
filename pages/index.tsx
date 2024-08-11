@@ -113,7 +113,7 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section className={cn(s["home__contact"])} id="contact"></section>
+        {/* <section className={cn(s["home__contact"])} id="contact"></section> */}
 
         <Footer />
       </div>
