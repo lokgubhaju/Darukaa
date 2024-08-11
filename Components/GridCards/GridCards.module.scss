@@ -3,7 +3,6 @@
   &__lists {
     @apply flex flex-wrap gap-4 content-center justify-center;
     &--card {
-        flex: 1 1 calc(25% - 16px);
       width: 150px;
       height: 220px;
       @apply rounded-xl overflow-hidden p-4;

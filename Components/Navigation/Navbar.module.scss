@@ -1,7 +1,7 @@
 .navigation {
   @apply w-full bg-gray sticky flex top-0 justify-between px-10 z-10;
   &__lists {
-    @apply list-none md:flex items-center;
+    @apply list-none hidden md:flex items-center;
     gap: 20px;
     height: 80px;
     &-item {
@@ -19,4 +19,8 @@
       color: #0070f3;
     }
   }
+}
+
+.mobile-navigation {
+  @apply block md:hidden;
 }
