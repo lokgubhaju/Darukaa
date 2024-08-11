@@ -96,7 +96,7 @@ export default function Home() {
         <section
           className={cn(
             s["home__what-we-do"],
-            "mt-10 rounded-20 overflow-hidden"
+            "rounded-20 overflow-hidden mt-10"
           )}
           id="what-we-do"
         >
@@ -114,7 +114,16 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        {/* <section className={cn(s["home__contact"])} id="contact"></section> */}
+        {<section className={cn(s["home__contact"], "mt-10")} id="contact">
+            <Image
+              src={"/images/about-us.png"}
+              alt=""
+              layout="responsive"
+              width={100}
+              height={100}
+               className="w-full h-full object-cover"
+            />
+        </section> }
 
         <Footer />
       </div>
