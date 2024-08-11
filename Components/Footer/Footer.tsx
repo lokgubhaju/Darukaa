@@ -3,7 +3,7 @@ import cn from "classnames";
 
 export default function Footer() {
   return (
-    <footer className={cn(s["footer"], "flex items-center justify-center")}>
+    <footer className={cn(s["footer"])}>
       Copyright © 2024 Darukaa Earth. All rights reserved.
     </footer>
   );

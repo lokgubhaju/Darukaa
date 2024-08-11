@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <nav className={cn(s["navigation"])}>
-      <p className={cn(s["navigation__logo"], "items-center flex text-black")}>
+      <p className={cn(s["navigation__logo"])}>
         Darukaa Earth
       </p>
       <div className={cn(s["mobile-navigation"])} onClick={handliClick}>
