@@ -81,7 +81,7 @@ export default function Navbar() {
           </nav>
         </section> */}
 
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+        <div className="hidden md:block md:w-auto" id="navbar-default">
           <ul className={cn(s["navigation__lists"])}>
             <li className={activeSection === "hero" ? s.active : ""}>
               <Link href="/">Home</Link>
