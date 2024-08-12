@@ -1,5 +1,8 @@
 .navigation {
-  @apply w-full bg-gray sticky top-0 z-10 mx-auto;
+  @apply w-full bg-gray sticky top-0 z-10;
+  &__container {
+    @apply container flex justify-between relative mx-auto;
+  }
   &__lists {
     @apply list-none hidden md:flex items-center;
     gap: 20px;

@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <nav className={cn(s["navigation"])}>
-      <div className="container flex justify-between relative">
+      <div className={cn(s['navigation__container'])}>
         <p className={cn(s["navigation__logo"])}>Darukaa Earth</p>
         {/* <section
           id="mobile-menu"
