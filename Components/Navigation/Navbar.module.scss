@@ -1,7 +1,7 @@
 .navigation {
   @apply w-full bg-gray sticky top-0 z-10;
   &__container {
-    @apply container flex justify-between relative mx-auto;
+    @apply flex justify-between relative mx-auto;
   }
   &__lists {
     @apply list-none hidden md:flex items-center;
@@ -22,12 +22,31 @@
       color: #32aa8d;
     }
   }
+  &-mobile-navigation {
+    &__lists {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      transition: all ease-in-out 0.5s;
+      &--active {
+        transition: all ease-in-out 0.5s;
+        display: block;
+      }
+    }
+    &__toggle {
+      display: block;
+    }
+  }
 
   &__logo {
-    @apply flex items-center text-black;
+    @apply items-center text-black flex;
   }
 }
-
-.mobile-navigation {
-  @apply block md:hidden;
-}
+// .navigation-mobile-navigation__lists {
+//   width: 100%;
+//   display: none;
+// }
+// .navigation-mobile-navigation__lists.is-open {
+//   display: block;
+// }

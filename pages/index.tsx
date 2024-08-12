@@ -130,9 +130,9 @@ export default function Home() {
         {/* Contact */}
 
         {/* About us section */}
-        {/* <section className={cn(s["home__about"], "container mt-10")} id="about">
+        <section className={cn(s["home__about"], "container mt-10")} id="about">
           <AboutCards />
-        </section> */}
+        </section>
         {/* <section>
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSdtQpGkzazw224VEtLl6aZJf6bXD16bxnFhEzpX4cxYOsco-A/viewform?embedded=true"

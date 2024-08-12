@@ -2,12 +2,16 @@ import Link from "next/link";
 import cn from "classnames";
 import s from "./Navbar.module.scss";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
+import Logo from "@/public/Logo";
+import { faX } from "@fortawesome/free-solid-svg-icons/faX";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handliClick = () => {
-    setIsOpen(!isOpen);
+  const handleClick = () => {
+    setIsOpen((open) => !open);
   };
 
   const [activeSection, setActiveSection] = useState(null);
@@ -23,7 +27,6 @@ export default function Navbar() {
         currentSection = section.getAttribute("id");
       }
     });
-    console.log("Current Section:", currentSection); // Add this line for debugging
     setActiveSection(currentSection);
   };
 
@@ -37,29 +40,68 @@ export default function Navbar() {
 
   return (
     <nav className={cn(s["navigation"])}>
-      <div className={cn(s['navigation__container'])}>
-        <p className={cn(s["navigation__logo"])}>Darukaa Earth</p>
-        {/* <div className="block md:hidden">
+      <div
+        className={cn(
+          s["navigation__container"],
+          "flex justify-between items-center"
+        )}
+      >
+        <ul className="flex flex-wrap justify-between items-center w-full md:hidden">
+          <div className="flex justify-between items-center w-full">
+            <Logo />
+            {/* <p className={cn(s["navigation__logo"])}>Darukaa Earth</p> */}
+            <li
+              className={cn(
+                s["navigation-mobile-navigation__toggle"],
+                "block md:hidden"
+              )}
+              onClick={handleClick}
+            >
+              <FontAwesomeIcon
+                icon={isOpen ? faX : faBars}
+                size="2x"
+                color="black"
+              />
+            </li>
+          </div>
+          <li
+            className={cn(s["navigation-mobile-navigation__lists"], {
+              [s["navigation-mobile-navigation__lists--active"]]: isOpen,
+            })}
+          >
             <ul>
-              <li className="flex items-center justify-center">
-              <Link href='/'>Home</Link>
-              <Link href='/'>Home</Link>
-              <Link href='/'>Home</Link>
-              <Link href='/'>Home</Link>
-              <Link href='/'>Home</Link>
+              <li className="flex flex-col items-start gap-4 rounded-xl bg-white p-4 text-black flex-wrap border-2 border-black">
+                <Link href="/" onClick={handleClick} className="text-xl">
+                  Home
+                </Link>
+                <Link href="#introduction" onClick={handleClick} className="text-xl">
+                  Introduction
+                </Link>
+                <Link href="#what-we-do" onClick={handleClick} className="text-xl">
+                  What we do
+                </Link>
+                <Link href="#services" onClick={handleClick} className="text-xl">
+                  Services
+                </Link>
+                <Link href="#solutions" onClick={handleClick} className="text-xl">
+                  Solutions
+                </Link>
+                <Link href="#about" onClick={handleClick} className="text-xl">
+                  About us
+                </Link>
               </li>
             </ul>
-        </div> */}
+          </li>
+        </ul>
 
-        <div className="hidden md:block md:w-auto" id="navbar-default">
+        <div
+          className="hidden md:flex justify-between md:w-full"
+          id="navbar-default"
+        >
+          <Logo />
           <ul className={cn(s["navigation__lists"])}>
             <li className={activeSection === "hero" ? s.active : ""}>
-              {/* <Link href="/">Home</Link>
-              <Link href="#introduction">Introduction</Link>
-              <Link href="#what-we-do">What we do</Link>
-              <Link href="#services">Services</Link>
-              <Link href="#solutions">Solutions</Link>
-              <Link href="#about">About us</Link> */}
+              <Link href="/">Home</Link>
             </li>
             <li className={activeSection === "introduction" ? s.active : ""}>
               <Link href="#introduction">Introduction</Link>
@@ -73,9 +115,9 @@ export default function Navbar() {
             <li className={activeSection === "solutions" ? s.active : ""}>
               <Link href="#solutions">Solutions</Link>
             </li>
-            {/* <li className={activeSection === "about" ? s.active : ""}>
+            <li className={activeSection === "about" ? s.active : ""}>
               <Link href="#about">About us</Link>
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>
