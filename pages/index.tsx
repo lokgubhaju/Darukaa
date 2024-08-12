@@ -128,7 +128,7 @@ export default function Home() {
         {/* Contact */}
 
         {/* About us section */}
-        <section className={cn(s["home__about"], "container mt-10")}>
+        <section className={cn(s["home__about"], "container mt-10")} id="about">
           <AboutCards />
         </section>
 
