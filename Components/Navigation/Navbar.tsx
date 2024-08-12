@@ -70,7 +70,7 @@ export default function Navbar() {
             })}
           >
             <ul>
-              <li className="flex flex-col items-start gap-4 rounded-xl bg-white p-4 text-black flex-wrap border-2 border-black">
+              <li className={cn(s['navigation-mobile-navigation__lists-overlay'])}>
                 <Link href="/" onClick={handleClick} className="text-xl">
                   Home
                 </Link>
