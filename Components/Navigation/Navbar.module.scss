@@ -3,7 +3,7 @@
   &__container {
     @apply flex justify-between relative mx-auto;
   }
-  &__desktop  {
+  &__desktop{
     @apply hidden md:flex justify-between md:w-full;
   }
   &__mobile {

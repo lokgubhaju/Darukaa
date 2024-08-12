@@ -46,7 +46,7 @@ export default function Navbar() {
           "flex justify-between items-center"
         )}
       >
-        <ul className={cn(s['navigation__mobile'])}>
+        <ul className={cn(s["navigation__mobile"])}>
           <div className="flex justify-between items-center w-full">
             <Logo />
             {/* <p className={cn(s["navigation__logo"])}>Darukaa Earth</p> */}
@@ -74,16 +74,32 @@ export default function Navbar() {
                 <Link href="/" onClick={handleClick} className="text-xl">
                   Home
                 </Link>
-                <Link href="#introduction" onClick={handleClick} className="text-xl">
+                <Link
+                  href="#introduction"
+                  onClick={handleClick}
+                  className="text-xl"
+                >
                   Introduction
                 </Link>
-                <Link href="#what-we-do" onClick={handleClick} className="text-xl">
+                <Link
+                  href="#what-we-do"
+                  onClick={handleClick}
+                  className="text-xl"
+                >
                   What we do
                 </Link>
-                <Link href="#services" onClick={handleClick} className="text-xl">
+                <Link
+                  href="#services"
+                  onClick={handleClick}
+                  className="text-xl"
+                >
                   Services
                 </Link>
-                <Link href="#solutions" onClick={handleClick} className="text-xl">
+                <Link
+                  href="#solutions"
+                  onClick={handleClick}
+                  className="text-xl"
+                >
                   Solutions
                 </Link>
                 <Link href="#about" onClick={handleClick} className="text-xl">
@@ -94,10 +110,7 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <div
-          className={cn(s['navigation__desktop'])}
-          id="navbar-default"
-        >
+        <div className={cn(s["navigation__desktop"])} id="navbar-default">
           <Logo />
           <ul className={cn(s["navigation__lists"])}>
             <li className={activeSection === "hero" ? s.active : ""}>
