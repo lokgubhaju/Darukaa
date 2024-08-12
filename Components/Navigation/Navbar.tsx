@@ -70,7 +70,7 @@ export default function Navbar() {
             })}
           >
             <ul>
-              <li className={cn(s['navigation-mobile-navigation__lists-overlay'])}>
+              <li className={cn(s['navigation__mobile-navigation__lists-overlay'])}>
                 <Link href="/" onClick={handleClick} className="text-xl">
                   Home
                 </Link>

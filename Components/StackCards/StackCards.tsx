@@ -65,7 +65,7 @@ const Panel: React.FC = () => {
       pretitle: "01",
       headline: "Blockchain Technology",
       body: "the credits are registered on blockchain to ensure high integrity",
-      videoUrl: "/videos/video-1.mp4",
+      videoUrl: "/videos/darukaa-hero.mp4",
       altText: "card-three",
       posterUrl: "/images/video-thumbnail.png",
     },

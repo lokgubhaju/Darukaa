@@ -10,7 +10,7 @@
     @apply flex flex-wrap justify-between items-center w-full md:hidden;
     &-navigation{
       @apply flex justify-between items-center w-full;
-      &__lists-overlay {
+      &__lists-overlay{
         @apply flex flex-col items-start gap-4 rounded-xl bg-white p-4 text-black flex-wrap border-2 border-black;
       }
     }
