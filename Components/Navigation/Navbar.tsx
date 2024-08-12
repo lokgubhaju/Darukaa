@@ -46,7 +46,7 @@ export default function Navbar() {
           "flex justify-between items-center"
         )}
       >
-        <ul className="flex flex-wrap justify-between items-center w-full md:hidden">
+        <ul className={cn(s['navigation__mobile'])}>
           <div className="flex justify-between items-center w-full">
             <Logo />
             {/* <p className={cn(s["navigation__logo"])}>Darukaa Earth</p> */}
@@ -95,7 +95,7 @@ export default function Navbar() {
         </ul>
 
         <div
-          className="hidden md:flex justify-between md:w-full"
+          className={cn(s['navigation__desktop'])}
           id="navbar-default"
         >
           <Logo />

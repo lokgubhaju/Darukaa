@@ -3,6 +3,12 @@
   &__container {
     @apply flex justify-between relative mx-auto;
   }
+  &__desktop  {
+    @apply hidden md:flex justify-between md:w-full;
+  }
+  &__mobile {
+    @apply flex flex-wrap justify-between items-center w-full md:hidden;
+  }
   &__lists {
     @apply list-none hidden md:flex items-center;
     gap: 20px;

@@ -76,11 +76,11 @@ export default function Home() {
             >
               We enhance permanence, additionality & accurate environmental
               measurements through carbon credit principles, facilitating
-              impactful climate finance solutions. <br />
+              impactful climate finance solutions.
               <br />
-              We bring together an impact-driven crew of diverse professionals
-              in environmental science, finance, geospatial analytics and social
-              development.
+              <br />
+              We consult and advise stakeholders using the latest standards and
+              methodologies to optimize sustainable outcomes.
             </p>
           </div>
           <div className="w-full md:w-1/2 p-4">
