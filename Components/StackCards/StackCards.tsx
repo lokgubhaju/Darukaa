@@ -82,7 +82,7 @@ const Panel: React.FC = () => {
       pretitle: "03",
       headline: "Multimodal data collection",
       body: "integrating different sources of data such as satellite & drone data, geospatial layers, IoT devices and ground collected data ",
-      imageUrl: "/images/stack-5.jpg",
+      imageUrl: "/images/stack-2.jpg",
       altText: "card-one",
     },
     {
