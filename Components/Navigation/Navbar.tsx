@@ -39,7 +39,7 @@ export default function Navbar() {
     <nav className={cn(s["navigation"])}>
       <div className="container flex justify-between relative">
         <p className={cn(s["navigation__logo"])}>Darukaa Earth</p>
-        <section
+        {/* <section
           id="mobile-menu"
           className="absolute top-0 bg-black w-full text-5xl flex-col justify-center origin-top animate-open-menu hidden"
         >
@@ -79,7 +79,7 @@ export default function Navbar() {
               Contact us
             </Link>
           </nav>
-        </section>
+        </section> */}
 
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className={cn(s["navigation__lists"])}>
