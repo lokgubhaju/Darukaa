@@ -1,16 +1,17 @@
 .home {
   @apply bg-gray;
-  // padding-left: 4rem;
-  // padding-right: 4rem;
-  // @screen md-max {
-  //   padding-left: 2rem;
-  //   padding-right: 2rem;
-  // }
+  padding-left: 4rem;
+  padding-right: 4rem;
+  @screen md-max {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
   &__hero {
     @apply bg-gray overflow-hidden relative;
     height: 600px;
     border-radius: 40px;
+    color: white;
     @screen xxl {
       height: 800px;
     }
@@ -19,11 +20,11 @@
       top: 50%;
       left: 40%;
       transform: translate(-50%, -50%);
-      h1 {
-        font-size: 52px;
-      }
       p {
-        font-size: 36px;
+        font-size: 18px;
+        @screen md {
+          font-size: 36px;
+        }
       }
     }
   }

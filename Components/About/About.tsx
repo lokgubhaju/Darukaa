@@ -149,7 +149,7 @@ const AboutCards: React.FC = () => {
 
   return (
     <main>
-      <h1 className={cn(s['about-us__headline'], 'h1')}>Meet our team</h1>
+      <h1 className={cn(s['about-us__headline'], 'text-h1-md-max md:text-h1')}>Meet our team</h1>
       <div className={cn(s["about-us"])}>
         {cards.map((card) => (
           <AboutCard

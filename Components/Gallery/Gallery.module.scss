@@ -1,8 +1,8 @@
 .gallery {
-    @apply p-8 bg-white rounded-20;
-    // background-image: url("/images/about-us.png");
-    // background-size: cover;
-    // background-position: center;
+  @apply p-4 md:p-8 bg-white rounded-20;
+  // background-image: url("/images/about-us.png");
+  // background-size: cover;
+  // background-position: center;
   &-container {
     @apply flex flex-col md:flex-row;
     gap: 2em;
@@ -12,11 +12,24 @@
         flex: 1;
         min-width: 100%;
       }
-      &--headline, &--subheadline {
+      &--headline,
+      &--subheadline {
         @apply text-center text-green-500;
       }
+      &--subheadline {
+        margin-bottom: 12px;
+        @screen md{
+          margin-bottom: 20px;
+        }
+      }
+      list-style: none;
       &--list {
         @apply text-green-800 text-left;
+        display: flex;
+        &::before {
+          content:'-';
+          margin-right: 8px;
+        }
       }
     }
   }

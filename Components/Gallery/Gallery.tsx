@@ -31,7 +31,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     <h1
       className={cn(
         s["gallery-container__card--headline"],
-        "h1"
+        "text-h1-md-max md:text-h1"
       )}
     >
       {headline}

@@ -25,7 +25,7 @@ export default function TextwithMedia() {
         <div
           className={cn(
             s["home__introduction__content"],
-            "w-full md:w-1/2 text-black p-10"
+            "w-full md:w-1/2 text-black p-4 md:p-10"
           )}
         >
           <p
@@ -66,7 +66,7 @@ export default function TextwithMedia() {
         <div
           className={cn(
             s["home__introduction__content"],
-            "w-full md:w-1/2 text-black p-10"
+            "w-full md:w-1/2 text-black p-4 md:p-10"
           )}
         >
           <p

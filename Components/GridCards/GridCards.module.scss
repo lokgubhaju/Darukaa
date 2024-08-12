@@ -4,8 +4,12 @@
   &__lists {
     @apply flex flex-wrap justify-center gap-4;
     &--card {
-      width: 150px;
-      height: 220px;
+      width: 120px;
+      height: 200px;
+      @screen md {
+        width: 160px;
+        height: 220px;
+      }
       @apply rounded-xl overflow-hidden p-4 flex flex-col justify-between;
       vertical-align:middle &__number {
         color: gray;

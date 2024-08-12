@@ -39,53 +39,28 @@ export default function Navbar() {
     <nav className={cn(s["navigation"])}>
       <div className={cn(s['navigation__container'])}>
         <p className={cn(s["navigation__logo"])}>Darukaa Earth</p>
-        {/* <section
-          id="mobile-menu"
-          className="absolute top-0 bg-black w-full text-5xl flex-col justify-center origin-top animate-open-menu hidden"
-        >
-          <button className="text 8xl self-end px-6">&times;</button>
-          <nav className="flex flex-col min-hscreen items-center py-8 aria-label='mobile'">
-            <Link href="/" className="w-full text-center py-6 hover:opacity-90">
-              Home
-            </Link>
-            <Link
-              href="#introduction"
-              className="w-full text-center py-6 hover:opacity-90"
-            >
-              Introduction
-            </Link>
-            <Link
-              href="#what-we-do"
-              className="w-full text-center py-6 hover:opacity-90"
-            >
-              What we do
-            </Link>
-            <Link
-              href="#services"
-              className="w-full text-center py-6 hover:opacity-90"
-            >
-              Services
-            </Link>
-            <Link
-              href="#solutions"
-              className="w-full text-center py-6 hover:opacity-90"
-            >
-              Solutions
-            </Link>
-            <Link
-              href="#contact"
-              className="w-full text-center py-6 hover:opacity-90"
-            >
-              Contact us
-            </Link>
-          </nav>
-        </section> */}
+        <div className="block md:hidden">
+            <ul>
+              <li className="flex items-center justify-center">
+              <Link href='/'>Home</Link>
+              <Link href='/'>Home</Link>
+              <Link href='/'>Home</Link>
+              <Link href='/'>Home</Link>
+              <Link href='/'>Home</Link>
+              </li>
+            </ul>
+        </div>
 
         <div className="hidden md:block md:w-auto" id="navbar-default">
           <ul className={cn(s["navigation__lists"])}>
-            <li className={activeSection === "hero" ? s.active : ""}>
+            {/* <li className={activeSection === "hero" ? s.active : ""}>
               <Link href="/">Home</Link>
-            </li>
+              <Link href="#introduction">Introduction</Link>
+              <Link href="#what-we-do">What we do</Link>
+              <Link href="#services">Services</Link>
+              <Link href="#solutions">Solutions</Link>
+              <Link href="#about">About us</Link>
+            </li> */}
             <li className={activeSection === "introduction" ? s.active : ""}>
               <Link href="#introduction">Introduction</Link>
             </li>
@@ -98,9 +73,9 @@ export default function Navbar() {
             <li className={activeSection === "solutions" ? s.active : ""}>
               <Link href="#solutions">Solutions</Link>
             </li>
-            <li className={activeSection === "about" ? s.active : ""}>
+            {/* <li className={activeSection === "about" ? s.active : ""}>
               <Link href="#about">About us</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

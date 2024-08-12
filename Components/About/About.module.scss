@@ -6,7 +6,7 @@
   align-content: flex-start;
 
   &__headline {
-    @apply mb-4 md:mb-8;
+    @apply mb-4 md:mb-8 text-white;
   }
 
   &__lists--card {
@@ -16,6 +16,9 @@
     padding: 40px 20px 0 40px;
     overflow: hidden;
     position: relative;
+    @screen md-max {
+      width: 100%;
+    }
     &::after {
       position: absolute;
       content: "";

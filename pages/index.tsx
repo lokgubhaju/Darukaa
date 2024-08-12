@@ -31,7 +31,9 @@ export default function Home() {
             <source src="/videos/video-1.mp4" type="video/mp4" />
           </video>
           <div className={cn(s["home__hero__overlay"])}>
-            <h1>Innovating Carbon & Biodiversity Solutions</h1>
+            <h1 className="text-h1-md-max md:text-h1">
+              Innovating Carbon & Biodiversity Solutions
+            </h1>
             <p>Catalyzing Climate Finance</p>
           </div>
         </section>
@@ -47,7 +49,7 @@ export default function Home() {
           <div
             className={cn(
               s["home__introduction__content"],
-              "w-full md:w-1/2 text-black p-10"
+              "w-full md:w-1/2 text-black p-4 md:p-10"
             )}
           >
             <p
@@ -128,9 +130,21 @@ export default function Home() {
         {/* Contact */}
 
         {/* About us section */}
-        <section className={cn(s["home__about"], "container mt-10")} id="about">
+        {/* <section className={cn(s["home__about"], "container mt-10")} id="about">
           <AboutCards />
-        </section>
+        </section> */}
+        {/* <section>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdtQpGkzazw224VEtLl6aZJf6bXD16bxnFhEzpX4cxYOsco-A/viewform?embedded=true"
+            width="640"
+            height="721"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+          >
+            Loading…
+          </iframe>
+        </section> */}
 
         <section className="container">
           <Footer />
