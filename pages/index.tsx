@@ -28,7 +28,7 @@ export default function Home() {
             poster="/images/video-thumbnail.png"
             className="w-full h-full object-cover"
           >
-            <source src="/videos/one.mp4" type="video/mp4" />
+            <source src="/videos/video-1.mp4" type="video/mp4" />
           </video>
           <div className={cn(s["home__hero__overlay"])}>
             <h1>Innovating Carbon & Biodiversity Solutions</h1>
