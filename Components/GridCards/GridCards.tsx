@@ -89,8 +89,7 @@ const GridCards: React.FC = () => {
   return (
     <main
       className={cn(
-        s["grid-cards"],
-        "flex flex-col-reverse md:flex-row p-4 md:p-20 h-full gap-8 bg-white text-black"
+        s["grid-cards"]
       )}
     >
       <div className={cn(s["grid-cards__lists"])}>

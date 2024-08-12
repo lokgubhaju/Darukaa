@@ -1,5 +1,6 @@
 .grid-cards {
   height: 100%;
+  @apply flex flex-col-reverse md:flex-row p-4 md:p-20 h-full gap-8 bg-white text-black;
   &__lists {
     @apply flex flex-wrap justify-center gap-4;
     &--card {
