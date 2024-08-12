@@ -47,7 +47,7 @@ export default function Navbar() {
         )}
       >
         <ul className={cn(s["navigation__mobile"])}>
-          <div className="flex justify-between items-center w-full">
+          <div className={cn(s['navigation__mobile-navigation'])}>
             <Logo />
             {/* <p className={cn(s["navigation__logo"])}>Darukaa Earth</p> */}
             <li

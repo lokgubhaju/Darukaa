@@ -8,6 +8,9 @@
   }
   &__mobile {
     @apply flex flex-wrap justify-between items-center w-full md:hidden;
+    &-navigation{
+      @apply flex justify-between items-center w-full;
+    }
   }
   &__lists {
     @apply list-none hidden md:flex items-center;
