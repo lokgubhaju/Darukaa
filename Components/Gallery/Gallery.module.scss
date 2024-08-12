@@ -12,6 +12,12 @@
         flex: 1;
         min-width: 100%;
       }
+      &--headline, &--subheadline {
+        @apply text-center text-green-500;
+      }
+      &--list {
+        @apply text-green-800 text-left;
+      }
     }
   }
 }

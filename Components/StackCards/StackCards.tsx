@@ -74,7 +74,7 @@ const Panel: React.FC = () => {
       pretitle: "02",
       headline: "Cutting edge AI-ML technology",
       body: "Precise carbon and environmental modelling ",
-      imageUrl: "/images/how_we_do_it_2.jpg",
+      imageUrl: "/images/stack-1.jpg",
       altText: "card-two",
     },
     {
@@ -82,7 +82,7 @@ const Panel: React.FC = () => {
       pretitle: "03",
       headline: "Multimodal data collection",
       body: "integrating different sources of data such as satellite & drone data, geospatial layers, IoT devices and ground collected data ",
-      imageUrl: "/images/how_we_do_it_1.jpg",
+      imageUrl: "/images/stack-5.jpg",
       altText: "card-one",
     },
     {
@@ -90,7 +90,7 @@ const Panel: React.FC = () => {
       pretitle: "04",
       headline: "Holistic Visualization",
       body: "view simplified and actionable insights on reporting dashboards",
-      imageUrl: "/images/how_we_do_it_3.jpg",
+      imageUrl: "/images/stack-7.jpg",
       altText: "card-three",
     },
     {
@@ -98,7 +98,7 @@ const Panel: React.FC = () => {
       pretitle: "05",
       headline: "Data Provision for reporting",
       body: "compiling data for reporting standards like TNFD, CSRD and BRSR",
-      imageUrl: "/images/how_we_do_it_1.jpg",
+      imageUrl: "/images/stack-8.jpg",
       altText: "card-three",
     },
   ];

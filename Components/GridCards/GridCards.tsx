@@ -19,8 +19,7 @@ const GridCard: React.FC<GridCardProps> = ({
 }) => (
   <div
     className={cn(
-      s["grid-cards__lists--card"],
-      "flex flex-col justify-between"
+      s["grid-cards__lists--card"]
     )}
     key={id}
     style={{ backgroundColor }}
@@ -47,43 +46,43 @@ const GridCards: React.FC = () => {
       id: "card-2",
       number: "02",
       title: "Feasibility Assessments",
-      backgroundColor: "blue",
+      backgroundColor: "hsla(36.158940397350996, 94.97%, 68.82%, 1.00)",
     },
     {
       id: "card-3",
       number: "03",
       title: "Project Design",
-      backgroundColor: "forestgreen",
+      backgroundColor: "#32aa8d",
     },
     {
       id: "card-4",
       number: "04",
       title: "Digital MRV",
-      backgroundColor: "orange",
+      backgroundColor: "hsla(165.33333333333331, 46.39%, 80.98%, 1.00)",
     },
     {
       id: "card-5",
       number: "05",
       title: "Carbon Credit Simulation",
-      backgroundColor: "purple",
+      backgroundColor: "#e9e9e9",
     },
     {
       id: "card-6",
       number: "06",
       title: "Environmental Monitoring",
-      backgroundColor: "forestgreen",
+      backgroundColor: "#9dbcf2",
     },
     {
       id: "card-7",
       number: "07",
       title: "Climate Modelling",
-      backgroundColor: "orange",
+      backgroundColor: "hsla(165.33333333333331, 46.39%, 80.98%, 1.00)",
     },
     {
       id: "card-8",
       number: "08",
       title: "Regulatory Compliance ",
-      backgroundColor: "yellow",
+      backgroundColor: "#fbbf64",
     },
   ];
 

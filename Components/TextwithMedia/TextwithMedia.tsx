@@ -14,7 +14,7 @@ export default function TextwithMedia() {
       >
         <div className="w-full md:w-1/2 p-4">
           <Image
-            src={"/images/intro.jpg"}
+            src={"/images/why-we-do.jpg"}
             alt=""
             layout="responsive"
             width={100}
@@ -98,7 +98,7 @@ export default function TextwithMedia() {
         </div>
         <div className="w-full md:w-1/2 p-4">
           <Image
-            src={"/images/intro.jpg"}
+            src={"/images/why-us.jpg"}
             alt=""
             width={100}
             height={100}

@@ -37,34 +37,73 @@ export default function Navbar() {
 
   return (
     <nav className={cn(s["navigation"])}>
-      <p className={cn(s["navigation__logo"], "")}>
-        Darukaa Earth
-      </p>
-      <div className={cn(s["mobile-navigation"])} onClick={handliClick}>
-        <span className={s.bar}>Home</span>
-        <span className={s.bar}>Introduction</span>
-        <span className={s.bar}>Services</span>
+      <div className="container flex justify-between relative">
+        <p className={cn(s["navigation__logo"])}>Darukaa Earth</p>
+        <section
+          id="mobile-menu"
+          className="absolute top-0 bg-black w-full text-5xl flex-col justify-center origin-top animate-open-menu hidden"
+        >
+          <button className="text 8xl self-end px-6">&times;</button>
+          <nav className="flex flex-col min-hscreen items-center py-8 aria-label='mobile'">
+            <Link href="/" className="w-full text-center py-6 hover:opacity-90">
+              Home
+            </Link>
+            <Link
+              href="#introduction"
+              className="w-full text-center py-6 hover:opacity-90"
+            >
+              Introduction
+            </Link>
+            <Link
+              href="#what-we-do"
+              className="w-full text-center py-6 hover:opacity-90"
+            >
+              What we do
+            </Link>
+            <Link
+              href="#services"
+              className="w-full text-center py-6 hover:opacity-90"
+            >
+              Services
+            </Link>
+            <Link
+              href="#solutions"
+              className="w-full text-center py-6 hover:opacity-90"
+            >
+              Solutions
+            </Link>
+            <Link
+              href="#contact"
+              className="w-full text-center py-6 hover:opacity-90"
+            >
+              Contact us
+            </Link>
+          </nav>
+        </section>
+
+        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul className={cn(s["navigation__lists"])}>
+            <li className={activeSection === "hero" ? s.active : ""}>
+              <Link href="/">Home</Link>
+            </li>
+            <li className={activeSection === "introduction" ? s.active : ""}>
+              <Link href="#introduction">Introduction</Link>
+            </li>
+            <li className={activeSection === "what-we-do" ? s.active : ""}>
+              <Link href="#what-we-do">What we do</Link>
+            </li>
+            <li className={activeSection === "services" ? s.active : ""}>
+              <Link href="#services">Services</Link>
+            </li>
+            <li className={activeSection === "solutions" ? s.active : ""}>
+              <Link href="#solutions">Solutions</Link>
+            </li>
+            <li className={activeSection === "contact" ? s.active : ""}>
+              <Link href="#contact">Contact us</Link>
+            </li>
+          </ul>
+        </div>
       </div>
-      <ul className={cn(s["navigation__lists"])}>
-        <li className={activeSection === "hero" ? s.active : ""}>
-          <Link href="/">Home</Link>
-        </li>
-        <li className={activeSection === "introduction" ? s.active : ""}>
-          <Link href="#introduction">Introduction</Link>
-        </li>
-        <li className={activeSection === "what-we-do" ? s.active : ""}>
-          <Link href="#what-we-do">What we do</Link>
-        </li>
-        <li className={activeSection === "services" ? s.active : ""}>
-          <Link href="#services">Services</Link>
-        </li>
-        <li className={activeSection === "solutions" ? s.active : ""}>
-          <Link href="#solutions">Solutions</Link>
-        </li>
-        <li className={activeSection === "contact" ? s.active : ""}>
-          <Link href="#contact">Contact us</Link>
-        </li>
-      </ul>
     </nav>
   );
 }

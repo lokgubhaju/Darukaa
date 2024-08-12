@@ -42,7 +42,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
       className={cn(s["about-us__lists--card__image"])}
     />
     <div
-      className={cn(s["about-us__lists--card__back"], "flex gap-4 mt-4 w-full")}
+      className={cn(s["about-us__lists--card__back"])}
     >
       {linkedInUrl && (
         <a href={linkedInUrl}>
@@ -149,7 +149,7 @@ const AboutCards: React.FC = () => {
 
   return (
     <main>
-      <h1 className="h1 mb-4 md:mb-8">Meet our team</h1>
+      <h1 className={cn(s['about-us__headline'], 'h1')}>Meet our team</h1>
       <div className={cn(s["about-us"])}>
         {cards.map((card) => (
           <AboutCard

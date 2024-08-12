@@ -83,7 +83,7 @@ export default function Home() {
           </div>
           <div className="w-full md:w-1/2 p-4">
             <Image
-              src={"/images/intro.jpg"}
+              src={"/images/who-we-are.jpg"}
               alt=""
               layout="responsive"
               width={100}

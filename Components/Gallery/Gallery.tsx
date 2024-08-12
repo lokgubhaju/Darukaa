@@ -31,31 +31,28 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     <h1
       className={cn(
         s["gallery-container__card--headline"],
-        "h1 text-center text-green-500"
+        "h1"
       )}
     >
       {headline}
     </h1>
     <p
       className={cn(
-        s["gallery-container__card--subheadline"],
-        "text-center text-green-500"
+        s["gallery-container__card--subheadline"]
       )}
     >
       {subheadline}
     </p>
     <li
       className={cn(
-        s["gallery-container__card--list"],
-        "text-left mt-6 text-green-800"
+        s["gallery-container__card--list"]
       )}
     >
       {list1}
     </li>
     <li
       className={cn(
-        s["gallery-container__card--list"],
-        "text-left text-green-800"
+        s["gallery-container__card--list"]
       )}
     >
       {list2}

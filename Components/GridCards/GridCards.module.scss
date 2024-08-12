@@ -1,11 +1,11 @@
 .grid-cards {
   height: 100%;
   &__lists {
-    @apply flex flex-wrap gap-4;
+    @apply flex flex-wrap justify-center gap-4;
     &--card {
       width: 150px;
       height: 220px;
-      @apply rounded-xl overflow-hidden p-4;
+      @apply rounded-xl overflow-hidden p-4 flex flex-col justify-between;
       vertical-align:middle &__number {
         color: gray;
       }
