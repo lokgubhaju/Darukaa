@@ -5,7 +5,7 @@ const Logo = ({...props}) => (
     id="Darukaa"
     data-name="Darukaa"
     viewBox="62.44 452.43 985.09 171"
-    width={160}
+    width={200}
     height={80}
     {...props}
   >
