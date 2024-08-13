@@ -43,8 +43,8 @@
   &__services {
   }
 
-  &__contact {
-    height: 100vh;
-    background-color: white;
+  &__contact-us {
+    height: 30vh;
+    @apply p-3 md:p-5 bg-white text-black;
   }
 }

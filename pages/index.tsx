@@ -9,6 +9,9 @@ import TextwithMedia from "@/Components/TextwithMedia/TextwithMedia";
 import Footer from "@/Components/Footer/Footer";
 import GalleryCards from "@/Components/Gallery/Gallery";
 import AboutCards from "@/Components/About/About";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   return (
@@ -146,7 +149,17 @@ export default function Home() {
           </iframe>
         </section> */}
 
-        <section className="container">
+        {/* Contact us */}
+        <section className="container mt-10 rounded-20 overflow-hidden">
+          <div className={cn(s['home__contact-us'])}>
+            <h1 className="text-h1-md-max md:text-h1">Contact us</h1>
+            <p className="mt-4 md:mt-8 text-base md:text-xl">
+              Contact us at: <a href="mailto:info@Darukaa.com"><FontAwesomeIcon icon={faEnvelope} size="1x" /> info@Darukaa.com</a>
+            </p>
+          </div>
+        </section>
+
+        <section className="container mt-10">
           <Footer />
         </section>
       </div>
