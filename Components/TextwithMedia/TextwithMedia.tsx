@@ -50,9 +50,11 @@ export default function TextwithMedia() {
               "body-copy-md-max md:body-copy"
             )}
           >
-            We believe carbon and nature-based credits are the most scalable
-            ways to channel investments into climate solutions, addressing the
-            Earth&apos;s biggest challenge.​
+            We believe in carbon and nature-based credits as scalable ways to
+            channel investments into climate solutions.
+            <br /> <br />
+            We commit to - Transparency, Data-Centricity, Governance and
+            Independent Validation.
           </p>
         </div>
       </section>

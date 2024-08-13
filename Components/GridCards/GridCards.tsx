@@ -18,19 +18,17 @@ const GridCard: React.FC<GridCardProps> = ({
   backgroundColor,
 }) => (
   <div
-    className={cn(
-      s["grid-cards__lists--card"]
-    )}
+    className={cn(s["grid-cards__lists--card"])}
     key={id}
     style={{ backgroundColor }}
   >
     <div className={cn(s["grid-cards__lists--card__number"])}>{number}</div>
     <div className={cn(s["grid-cards__lists--card__title"])}>{title}</div>
-    {description && (
+    {/* {description && (
       <div className={cn(s["grid-cards__lists--card__description"])}>
         {description}
       </div>
-    )}
+    )} */}
   </div>
 );
 
@@ -40,58 +38,54 @@ const GridCards: React.FC = () => {
       id: "card-1",
       number: "01",
       title: "Advisory & Consultancy",
+      description:
+        "We provide expert guidance to project developers and landowners, ensuring a seamless development and certification process.",
       backgroundColor: "cadetblue",
     },
     {
       id: "card-2",
       number: "02",
-      title: "Feasibility Assessments",
+      title: "Feasibility Assessments & Project Design",
+      description:
+        "We provide expert guidance to project developers and landowners, ensuring a seamless development and certification process. ",
       backgroundColor: "hsla(36.158940397350996, 94.97%, 68.82%, 1.00)",
     },
     {
       id: "card-3",
       number: "03",
-      title: "Project Design",
+      title: "Digital MRV & Credit-quality Simulation",
+      description:
+        "Leveraging state-of-the-art technology, we deliver precise monitoring and maintain high standards in credit quality.",
       backgroundColor: "#32aa8d",
     },
     {
       id: "card-4",
       number: "04",
-      title: "Digital MRV",
+      title: "Environmental & Climate Modelling",
+      description:
+        "Through accurate environmental and climate modeling, we identify potential risks and opportunities, enhancing project resilience.",
       backgroundColor: "hsla(165.33333333333331, 46.39%, 80.98%, 1.00)",
     },
     {
       id: "card-5",
       number: "05",
-      title: "Carbon Credit Simulation",
+      title: "Biodiversity Monitoring",
+      description:
+        "We track and monitor biodiversity, promoting conservation and identifying potential co-benefits.",
       backgroundColor: "#e9e9e9",
     },
     {
       id: "card-6",
       number: "06",
-      title: "Environmental Monitoring",
+      title: "Regulatory Compliance",
+      description:
+        "We support corporate net-zero initiatives by facilitating accurate and comprehensive environmental reporting.",
       backgroundColor: "#9dbcf2",
-    },
-    {
-      id: "card-7",
-      number: "07",
-      title: "Climate Modelling",
-      backgroundColor: "hsla(165.33333333333331, 46.39%, 80.98%, 1.00)",
-    },
-    {
-      id: "card-8",
-      number: "08",
-      title: "Regulatory Compliance ",
-      backgroundColor: "#fbbf64",
     },
   ];
 
   return (
-    <main
-      className={cn(
-        s["grid-cards"]
-      )}
-    >
+    <main className={cn(s["grid-cards"])}>
       <div className={cn(s["grid-cards__lists"])}>
         {cards.map((card) => (
           <GridCard
@@ -99,6 +93,7 @@ const GridCards: React.FC = () => {
             id={card.id}
             number={card.number}
             title={card.title}
+            description={card.description}
             backgroundColor={card.backgroundColor}
           />
         ))}
