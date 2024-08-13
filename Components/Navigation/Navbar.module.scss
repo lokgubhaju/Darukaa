@@ -8,6 +8,7 @@
   }
   &__mobile {
     @apply flex flex-wrap justify-between items-center w-full md:hidden;
+    height: 80px;
     &-navigation{
       @apply flex justify-between items-center w-full;
       &__lists-overlay{

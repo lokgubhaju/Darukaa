@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import Logo from "@/public/Logo";
 import { faX } from "@fortawesome/free-solid-svg-icons/faX";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,8 +48,8 @@ export default function Navbar() {
         )}
       >
         <ul className={cn(s["navigation__mobile"])}>
-          <div className={cn(s['navigation__mobile-navigation'])}>
-            <Logo />
+          <div className={cn(s["navigation__mobile-navigation"])}>
+            <Image src={"/images/logo.png"} alt="Logo of Darukaa" width={200} height={80} />
             {/* <p className={cn(s["navigation__logo"])}>Darukaa Earth</p> */}
             <li
               className={cn(
@@ -70,7 +71,11 @@ export default function Navbar() {
             })}
           >
             <ul>
-              <li className={cn(s['navigation__mobile-navigation__lists-overlay'])}>
+              <li
+                className={cn(
+                  s["navigation__mobile-navigation__lists-overlay"]
+                )}
+              >
                 <Link href="/" onClick={handleClick} className="text-xl">
                   Home
                 </Link>
