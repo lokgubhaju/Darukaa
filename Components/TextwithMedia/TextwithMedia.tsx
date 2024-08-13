@@ -83,14 +83,17 @@ export default function TextwithMedia() {
           </div>
         </div>
         <div className="w-full md:w-1/2 p-4">
-          <Image
+          {/* <Image
             src={"/images/why-us.jpg"}
             alt=""
             width={100}
             height={100}
             layout="responsive"
             className="rounded-xl !h-full object-cover overflow-hidden"
-          />
+          /> */}
+          <video autoPlay muted loop playsInline poster="/images/why-us.png" className="rounded-20 overflow-hidden">
+            <source src="/videos/why-us.mp4" />
+          </video>
         </div>
       </section>
     </>

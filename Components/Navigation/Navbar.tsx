@@ -116,7 +116,8 @@ export default function Navbar() {
         </ul>
 
         <div className={cn(s["navigation__desktop"])} id="navbar-default">
-          <Logo />
+          {/* <Logo />  */}
+          <Image src={"/images/logo.png"} alt="Logo of Darukaa" width={200} height={40} className="h-10"/>
           <ul className={cn(s["navigation__lists"])}>
             <li className={activeSection === "hero" ? s.active : ""}>
               <Link href="/">Home</Link>

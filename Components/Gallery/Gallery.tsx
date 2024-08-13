@@ -8,7 +8,9 @@ interface GalleryCardProps {
   subheadline: string;
   list1: string;
   list2: string;
-  imageUrl: string;
+  imageUrl?: string;
+  videoUrl?: string;
+  posterUrl?: string;
 }
 
 const GalleryCard: React.FC<GalleryCardProps> = ({
@@ -18,16 +20,33 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
   list1,
   list2,
   imageUrl,
+  videoUrl,
+  posterUrl,
 }) => (
   <div className={cn(s["gallery-container__card"])} key={id}>
-    <Image
-      src={imageUrl}
-      alt=""
-      width={100}
-      height={100}
-      layout="responsive"
-      className="rounded-20 overflow-hidden"
-    />
+    {imageUrl && (
+      <Image
+        src={imageUrl}
+        alt=""
+        width={100}
+        height={100}
+        layout="responsive"
+        className="rounded-20 overflow-hidden"
+      />
+    )}
+
+    {videoUrl && (
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster={posterUrl}
+        className="rounded-20 overflow-hidden"
+      >
+        <source src={videoUrl} type="video/mp4" />
+      </video>
+    )}
     <h1
       className={cn(
         s["gallery-container__card--headline"],
@@ -36,27 +55,11 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     >
       {headline}
     </h1>
-    <p
-      className={cn(
-        s["gallery-container__card--subheadline"]
-      )}
-    >
+    <p className={cn(s["gallery-container__card--subheadline"])}>
       {subheadline}
     </p>
-    <li
-      className={cn(
-        s["gallery-container__card--list"]
-      )}
-    >
-      {list1}
-    </li>
-    <li
-      className={cn(
-        s["gallery-container__card--list"]
-      )}
-    >
-      {list2}
-    </li>
+    <li className={cn(s["gallery-container__card--list"])}>{list1}</li>
+    <li className={cn(s["gallery-container__card--list"])}>{list2}</li>
   </div>
 );
 
@@ -69,7 +72,8 @@ const GalleryCards: React.FC = () => {
       list1: "Over 1 million species face extinction due to habitat loss.",
       list2:
         "$700 Billion per year required by 2030 to effectively conserve biodiversity.",
-      imageUrl: "/images/intro.jpg",
+      videoUrl: "/videos/wildlife-loss.mp4",
+      posterUrl: "/images/wildlife-loss.png"
     },
     {
       id: "card-2",
@@ -77,7 +81,8 @@ const GalleryCards: React.FC = () => {
       subheadline: "Global tree cover loss/year has doubled in two decades.",
       list1: "Global carbon credits market projected to grow at 31%+ CAGR.",
       list2: "$2 Trillion worth of Carbon credits opportunities.",
-      imageUrl: "/images/intro.jpg",
+      videoUrl: "/videos/2x-tree-loss.mp4",
+      posterUrl: "/images/tree-loss.png"
     },
     {
       id: "card-3",
@@ -87,13 +92,16 @@ const GalleryCards: React.FC = () => {
       list1: "Global tree cover loss/year has doubled in two decades.",
       list2:
         "80% of asset owners globally integrate ESG factors into their investment decisions.",
-      imageUrl: "/images/intro.jpg",
+      videoUrl: "/videos/50000-companies.mp4",
+      posterUrl: "/images/companies.png"
     },
   ];
 
   return (
     <main className={cn(s["gallery"])}>
-      <h1 className="h1-md-max md:h1 text-black mb-4 md:mb-10">Why it matters?</h1>
+      <h1 className="h1-md-max md:h1 text-black mb-4 md:mb-10">
+        Why it matters?
+      </h1>
       <div
         className={cn(s["gallery-container"])}
         style={{ backgroundImage: "/images/intro.jpg" }}
@@ -106,7 +114,9 @@ const GalleryCards: React.FC = () => {
             subheadline={card.subheadline}
             list1={card.list1}
             list2={card.list2}
-            imageUrl={card.imageUrl}
+            // imageUrl={card.imageUrl}
+            videoUrl={card.videoUrl}
+            // posterUrl={card.posterUrl}
           />
         ))}
       </div>

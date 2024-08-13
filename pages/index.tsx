@@ -28,14 +28,14 @@ export default function Home() {
             muted
             loop
             playsInline
-            poster="/images/video-thumbnail.png"
+            poster="/images/darukaa-hero.png"
             className="w-full h-full object-cover"
           >
             <source src="/videos/darukaa-hero.mp4" type="video/mp4" />
           </video>
           <div className={cn(s["home__hero__overlay"])}>
             <h1 className="text-h1-md-max md:text-h1">
-            Catalyzing Climate Finance
+              Catalyzing Climate Finance
             </h1>
             <p>Innovating Carbon & Biodiversity Solutions</p>
           </div>
@@ -87,14 +87,24 @@ export default function Home() {
             </p>
           </div>
           <div className="w-full md:w-1/2 p-4">
-            <Image
-              src={"/images/who-we-are.jpg"}
+            {/* <Image
+              src={"/images/hero.gif"}
               alt=""
               layout="responsive"
               width={100}
               height={100}
               className="rounded-xl overflow-hidden"
-            />
+            /> */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/images/who-we-are.png"
+              className="rounded-20 overflow-hidden"
+            >
+              <source src="/videos/who-we-are.mp4" type="video/mp4" />
+            </video>
           </div>
         </section>
 
@@ -151,10 +161,13 @@ export default function Home() {
 
         {/* Contact us */}
         <section className="container mt-10 rounded-20 overflow-hidden">
-          <div className={cn(s['home__contact-us'])}>
+          <div className={cn(s["home__contact-us"])}>
             <h1 className="text-h1-md-max md:text-h1">Contact us</h1>
             <p className="mt-4 md:mt-8 text-base md:text-xl">
-              Contact us at: <a href="mailto:info@Darukaa.com"><FontAwesomeIcon icon={faEnvelope} size="1x" /> info@Darukaa.com</a>
+              Contact us at:{" "}
+              <a href="mailto:info@Darukaa.com">
+                <FontAwesomeIcon icon={faEnvelope} size="1x" /> info@Darukaa.com
+              </a>
             </p>
           </div>
         </section>

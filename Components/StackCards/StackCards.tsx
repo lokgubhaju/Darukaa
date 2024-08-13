@@ -65,40 +65,34 @@ const Panel: React.FC = () => {
       pretitle: "01",
       headline: "Multimodal data collection",
       body: "We begin with multimodal data collection, integrating satellite and drone imagery, geospatial layers, IoT devices, and on-ground data to create a comprehensive view of the environment.",
-      videoUrl: "/videos/darukaa-hero.mp4",
+      // videoUrl: "/videos/darukaa-hero.mp4",
       altText: "card-three",
-      posterUrl: "/images/video-thumbnail.png",
+      imageUrl: "/images/multimodal-data.gif",
     },
     {
       id: "card-2",
       pretitle: "02",
       headline: "Cutting edge AI-ML technology",
       body: "Our cutting-edge AI technology then processes this data, delivering precise carbon and environmental models that reveal critical insights.",
-      imageUrl: "/images/stack-1.jpg",
+      videoUrl: "/videos/cutting-edge-ai.mp4",
+      posterUrl: "/images/cutting-edge-ai.png",
       altText: "card-two",
     },
     {
       id: "card-3",
       pretitle: "03",
-      headline: "Multimodal data collection",
-      body: "We begin with multimodal data collection, integrating satellite and drone imagery, geospatial layers, IoT devices, and on-ground data to create a comprehensive view of the environment.",
-      imageUrl: "/images/stack-2.jpg",
-      altText: "card-one",
+      headline: "Holistic Visualization",
+      body: "To make these insights accessible, our holistic visualization simplifies complex data into clear, actionable reports on intuitive dashboards.",
+      videoUrl: "/videos/holistic-view.mp4",
+      posterUrl: "/images/holistic-view.png",
+      altText: "card-three",
     },
     {
       id: "card-4",
       pretitle: "04",
-      headline: "Holistic Visualization",
-      body: "To make these insights accessible, our holistic visualization simplifies complex data into clear, actionable reports on intuitive dashboards.",
-      imageUrl: "/images/stack-7.jpg",
-      altText: "card-three",
-    },
-    {
-      id: "card-5",
-      pretitle: "05",
       headline: "Integrity is a key",
       body: "Integrity is key, so we use blockchain technology to securely register carbon credits, ensuring they are transparent and traceable.",
-      imageUrl: "/images/stack-9.jpg",
+      imageUrl: "/images/integrity-blockchain.gif",
       altText: "card-three",
     },
     {
@@ -106,7 +100,8 @@ const Panel: React.FC = () => {
       pretitle: "05",
       headline: "Data Provision for reporting",
       body: "We facilitate regulatory reporting for TNFD, CSRD, and BRSR standards, helping you stay compliant and recognized globally.",
-      imageUrl: "/images/stack-8.jpg",
+      videoUrl: "/videos/data-provision.mp4",
+      posterUrl: '/images/data-provision.png',
       altText: "card-three",
     },
   ];
@@ -125,8 +120,8 @@ const Panel: React.FC = () => {
             body={card.body}
             imageUrl={card.imageUrl}
             imageAlt={card.altText}
-            videoUrl={card.videoUrl}
-            posterUrl={card.posterUrl}
+            videoUrl={card?.videoUrl}
+            posterUrl={card?.posterUrl}
           />
         ))}
       </ul>
