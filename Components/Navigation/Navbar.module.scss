@@ -7,7 +7,7 @@
     @apply hidden md:flex items-center justify-between md:w-full;
   }
   &__mobile {
-    @apply flex flex-wrap justify-between items-center w-full md:hidden;
+    @apply flex flex-wrap justify-between items-center w-full relative md:hidden;
     height: 80px;
     &-navigation{
       @apply flex justify-between items-center w-full;
@@ -40,7 +40,7 @@
       display: none;
       width: 100%;
       position: absolute;
-      top: 60px;
+      top: 70px;
       transition: all ease-in-out 0.5s;
       &--active {
         transition: all ease-in-out 0.5s;
