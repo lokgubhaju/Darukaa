@@ -99,9 +99,7 @@ const GridCards: React.FC = () => {
         ))}
       </div>
       <div className={cn(s["grid-cards__content"], "self-baseline")}>
-        <p className={cn(s["grid-cards__content--headline"])}>
-          Revalue results
-        </p>
+        <p className={cn(s["grid-cards__content--headline"])}>What we do</p>
         <p className={cn(s["grid-cards__content--body-copy"])}>
           Together our team, tools and approach allow Revalue to achieve results
           well beyond industry standards.

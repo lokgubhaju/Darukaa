@@ -28,14 +28,6 @@ export default function TextwithMedia() {
             "w-full md:w-1/2 text-black p-4 md:p-10"
           )}
         >
-          <p
-            className={cn(
-              s["home__introduction__content--pretitle"],
-              "pretitle"
-            )}
-          >
-            Solutions
-          </p>
           <h1
             className={cn(
               s["home__introduction__content--headline"],
@@ -71,14 +63,6 @@ export default function TextwithMedia() {
             "w-full md:w-1/2 text-black p-4 md:p-10"
           )}
         >
-          <p
-            className={cn(
-              s["home__introduction__content--pretitle"],
-              "pretitle"
-            )}
-          >
-            Solutions
-          </p>
           <h1
             className={cn(
               s["home__introduction__content--headline"],

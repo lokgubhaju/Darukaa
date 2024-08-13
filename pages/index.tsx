@@ -35,9 +35,9 @@ export default function Home() {
           </video>
           <div className={cn(s["home__hero__overlay"])}>
             <h1 className="text-h1-md-max md:text-h1">
-              Innovating Carbon & Biodiversity Solutions
+            Catalyzing Climate Finance
             </h1>
-            <p>Catalyzing Climate Finance</p>
+            <p>Innovating Carbon & Biodiversity Solutions</p>
           </div>
         </section>
 

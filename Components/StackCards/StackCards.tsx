@@ -113,8 +113,7 @@ const Panel: React.FC = () => {
   return (
     <main>
       <div className={cn(s["stack-cards__text"], "text-neutral-600")}>
-        <p className="pretitle">How we do it</p>
-        <p className="h1-md-max md:h1">Services</p>
+        <p className="h1-md-max md:h1">How we do it</p>
       </div>
       <ul>
         {cards.map((card) => (
