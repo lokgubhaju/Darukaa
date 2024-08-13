@@ -1,7 +1,7 @@
 .navigation {
   @apply w-full bg-gray sticky top-0 z-10;
   &__container {
-    @apply flex justify-between relative mx-auto;
+    @apply flex justify-between relative container mx-auto;
   }
   &__desktop{
     @apply hidden md:flex items-center justify-between md:w-full;

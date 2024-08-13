@@ -15,79 +15,80 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   return (
-    <main className={cn(s["home"])}>
-      <Head>
-        <title>Darukaa Earth | Home</title>
-      </Head>
+    <>
       <Navbar />
-      <div>
-        {/* Hero Section */}
-        <section className={cn(s["home__hero"], "container")} id="hero">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="/images/darukaa-hero.png"
-            className="w-full h-full object-cover"
-          >
-            <source src="/videos/darukaa-hero.mp4" type="video/mp4" />
-          </video>
-          <div className={cn(s["home__hero__overlay"])}>
-            <h1 className="text-h1-md-max md:text-h1">
-              Catalyzing Climate Finance
-            </h1>
-            <p>Innovating Carbon & Biodiversity Solutions</p>
-          </div>
-        </section>
+      <main className={cn(s["home"])}>
+        <Head>
+          <title>Darukaa Earth | Home</title>
+        </Head>
+        <div>
+          {/* Hero Section */}
+          <section className={cn(s["home__hero"], "container")} id="hero">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/images/darukaa-hero.png"
+              className="w-full h-full object-cover"
+            >
+              <source src="/videos/darukaa-hero.mp4" type="video/mp4" />
+            </video>
+            <div className={cn(s["home__hero__overlay"])}>
+              <h1 className="text-h1-md-max md:text-h1">
+                Catalyzing Climate Finance
+              </h1>
+              <p>Innovating Carbon & Biodiversity Solutions</p>
+            </div>
+          </section>
 
-        {/* Introduction */}
-        <section
-          className={cn(
-            s["home__introduction"],
-            "flex flex-col md:flex-row bg-white relative rounded-20 mt-10 container"
-          )}
-          id="introduction"
-        >
-          <div
+          {/* Introduction */}
+          <section
             className={cn(
-              s["home__introduction__content"],
-              "w-full md:w-1/2 text-black p-4 md:p-10"
+              s["home__introduction"],
+              "flex flex-col md:flex-row bg-white relative rounded-20 mt-10 container"
             )}
+            id="introduction"
           >
-            <p
+            <div
               className={cn(
-                s["home__introduction__content--pretitle"],
-                "pretitle"
+                s["home__introduction__content"],
+                "w-full md:w-1/2 text-black p-4 md:p-10"
               )}
             >
-              Introduction
-            </p>
-            <h1
-              className={cn(
-                s["home__introduction__content--headline"],
-                "h1-md-max md:h1"
-              )}
-            >
-              Who we are
-            </h1>
-            <p
-              className={cn(
-                s["home__introduction__content--body-copy"],
-                "body-copy-md-max md:body-copy"
-              )}
-            >
-              We enhance permanence, additionality & accurate environmental
-              measurements through carbon credit principles, facilitating
-              impactful climate finance solutions.
-              <br />
-              <br />
-              We consult and advise stakeholders using the latest standards and
-              methodologies to optimize sustainable outcomes.
-            </p>
-          </div>
-          <div className="w-full md:w-1/2 p-4">
-            {/* <Image
+              <p
+                className={cn(
+                  s["home__introduction__content--pretitle"],
+                  "pretitle"
+                )}
+              >
+                Introduction
+              </p>
+              <h1
+                className={cn(
+                  s["home__introduction__content--headline"],
+                  "h1-md-max md:h1"
+                )}
+              >
+                Who we are
+              </h1>
+              <p
+                className={cn(
+                  s["home__introduction__content--body-copy"],
+                  "body-copy-md-max md:body-copy"
+                )}
+              >
+                We enhance permanence, additionality & accurate environmental
+                measurements through carbon credit principles, facilitating
+                impactful climate finance solutions.
+                <br />
+                <br />
+                We consult and advise stakeholders using the latest standards
+                and methodologies to optimize sustainable outcomes.
+              </p>
+            </div>
+            <div className="w-full md:w-1/2 p-4">
+              {/* <Image
               src={"/images/hero.gif"}
               alt=""
               layout="responsive"
@@ -95,58 +96,58 @@ export default function Home() {
               height={100}
               className="rounded-xl overflow-hidden"
             /> */}
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="/images/who-we-are.png"
-              className="rounded-20 overflow-hidden"
-            >
-              <source src="/videos/who-we-are.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </section>
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="/images/who-we-are.png"
+                className="rounded-20 overflow-hidden"
+              >
+                <source src="/videos/who-we-are.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </section>
 
-        {/* What we do */}
-        <section
-          className={cn(
-            s["home__what-we-do"],
-            "rounded-20 overflow-hidden mt-10 container"
-          )}
-          id="what-we-do"
-        >
-          <GridCards />
-        </section>
+          {/* What we do */}
+          <section
+            className={cn(
+              s["home__what-we-do"],
+              "rounded-20 overflow-hidden mt-10 container"
+            )}
+            id="what-we-do"
+          >
+            <GridCards />
+          </section>
 
-        {/* Services | How we do it */}
-        <section
-          className={cn(s["home__services"], "mt-10 container")}
-          id="services"
-        >
-          <StackCards />
-        </section>
+          {/* Services | How we do it */}
+          <section
+            className={cn(s["home__services"], "mt-10 container")}
+            id="services"
+          >
+            <StackCards />
+          </section>
 
-        {/* Solutions */}
-        <section
-          className={cn(s["home__solutions"], "mt-10 container")}
-          id="solutions"
-        >
-          <TextwithMedia />
-        </section>
+          {/* Solutions */}
+          <section
+            className={cn(s["home__solutions"], "mt-10 container")}
+            id="solutions"
+          >
+            <TextwithMedia />
+          </section>
 
-        {/* Why it matters */}
-        <section className={cn(s["home__why-it-matters"], "mt-10 container")}>
-          <GalleryCards />
-        </section>
+          {/* Why it matters */}
+          <section className={cn(s["home__why-it-matters"], "mt-10 container")}>
+            <GalleryCards />
+          </section>
 
-        {/* Contact */}
+          {/* Contact */}
 
-        {/* About us section */}
-        {/* <section className={cn(s["home__about"], "container mt-10")} id="about">
+          {/* About us section */}
+          {/* <section className={cn(s["home__about"], "container mt-10")} id="about">
           <AboutCards />
         </section> */}
-        {/* <section>
+          {/* <section>
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSdtQpGkzazw224VEtLl6aZJf6bXD16bxnFhEzpX4cxYOsco-A/viewform?embedded=true"
             width="640"
@@ -159,23 +160,25 @@ export default function Home() {
           </iframe>
         </section> */}
 
-        {/* Contact us */}
-        <section className="container mt-10 rounded-20 overflow-hidden">
-          <div className={cn(s["home__contact-us"])}>
-            <h1 className="text-h1-md-max md:text-h1">Contact us</h1>
-            <p className="mt-4 md:mt-8 text-base md:text-xl">
-              Contact us at:{" "}
-              <a href="mailto:info@Darukaa.com">
-                <FontAwesomeIcon icon={faEnvelope} size="1x" /> info@Darukaa.com
-              </a>
-            </p>
-          </div>
-        </section>
+          {/* Contact us */}
+          <section className="container mt-10 rounded-20 overflow-hidden">
+            <div className={cn(s["home__contact-us"])}>
+              <h1 className="text-h1-md-max md:text-h1">Contact us</h1>
+              <p className="mt-4 md:mt-8 text-base md:text-xl">
+                Contact us at:{" "}
+                <a href="mailto:info@Darukaa.com">
+                  <FontAwesomeIcon icon={faEnvelope} size="1x" />{" "}
+                  info@Darukaa.com
+                </a>
+              </p>
+            </div>
+          </section>
 
-        <section className="container mt-10">
-          <Footer />
-        </section>
-      </div>
-    </main>
+          <section className="container mt-10">
+            <Footer />
+          </section>
+        </div>
+      </main>
+    </>
   );
 }
