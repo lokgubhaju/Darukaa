@@ -1,4 +1,6 @@
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { AppProps } from "next/app";
 import { Poppins } from "next/font/google";
 
@@ -10,6 +12,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={poppins.className}>
       <Component {...pageProps} />
+      <Analytics />
+      <SpeedInsights />
     </main>
   );
 }
