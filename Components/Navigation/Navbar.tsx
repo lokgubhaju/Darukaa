@@ -67,6 +67,7 @@ export default function Navbar() {
               />
             </li>
           </div>
+          
           <li
             className={cn(s["navigation-mobile-navigation__lists"], {
               [s["navigation-mobile-navigation__lists--active"]]: isOpen,
