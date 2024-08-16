@@ -39,6 +39,8 @@ export default function Navbar() {
     };
   }, []);
 
+  const menu = ['Home', 'Introduction', 'What we do', 'Services', 'Solutions']
+
   return (
     <nav className={cn(s["navigation"])}>
       <div
@@ -76,7 +78,7 @@ export default function Navbar() {
                   s["navigation__mobile-navigation__lists-overlay"]
                 )}
               >
-                <Link href="/" onClick={handleClick} className="text-xl">
+                {/* <Link href="/" onClick={handleClick} className="text-xl">
                   Home
                 </Link>
                 <Link
@@ -109,7 +111,7 @@ export default function Navbar() {
                 </Link>
                 <Link href="#about" onClick={handleClick} className="text-xl">
                   About us
-                </Link>
+                </Link> */}
               </li>
             </ul>
           </li>
