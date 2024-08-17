@@ -4,10 +4,10 @@
     @apply flex justify-between relative container px-4 md:px-0 mx-auto;
   }
   &__desktop{
-    @apply hidden md:flex items-center justify-between md:w-full;
+    @apply hidden lg:flex items-center justify-between md:w-full container;
   }
   &__mobile {
-    @apply flex flex-wrap justify-between items-center w-full relative md:hidden;
+    @apply flex flex-wrap justify-between items-center w-full relative lg:hidden px-4;
     height: 80px;
     &-navigation{
       @apply flex justify-between items-center w-full;

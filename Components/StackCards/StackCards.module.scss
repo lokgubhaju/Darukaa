@@ -119,8 +119,5 @@
 }
 .stack-cards__text {
   position: sticky;
-  top: 60px;
-  @screen md {
-    top: 80px;
-  }
+  top: 80px;
 }
