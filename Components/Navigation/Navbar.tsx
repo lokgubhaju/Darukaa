@@ -2,10 +2,6 @@ import Link from "next/link";
 import cn from "classnames";
 import s from "./Navbar.module.scss";
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
-import Logo from "@/public/Logo";
-import { faX } from "@fortawesome/free-solid-svg-icons/faX";
 import Image from "next/image";
 import MobileNavigation from "./MobileNavigation";
 
@@ -40,7 +36,14 @@ export default function Navbar() {
     };
   }, []);
 
-  const menu = ["Home", "Introduction", "What we do", "Services", "Solutions"];
+  const menu = [
+    { title: "Home", link: "/", id:"home" },
+    { title: "Introduction", link: "#introduction", id: 'introduction' },
+    { title: "What we do", link: "#what-we-do", id:'what-we-do' },
+    { title: "Services", link: "#services", id:'services' },
+    { title: "Solutions", link: "#solutions", id:'solutions' },
+    // { title: "About us", link: "#about", id:'about' },
+  ];
 
   return (
     <nav className={cn(s["navigation"])}>
@@ -58,24 +61,14 @@ export default function Navbar() {
           className="h-10"
         />
         <ul className={cn(s["navigation__lists"])}>
-          <li className={activeSection === "hero" ? s.active : ""}>
-            <Link href="/">Home</Link>
-          </li>
-          <li className={activeSection === "introduction" ? s.active : ""}>
-            <Link href="#introduction">Introduction</Link>
-          </li>
-          <li className={activeSection === "what-we-do" ? s.active : ""}>
-            <Link href="#what-we-do">What we do</Link>
-          </li>
-          <li className={activeSection === "services" ? s.active : ""}>
-            <Link href="#services">Services</Link>
-          </li>
-          <li className={activeSection === "solutions" ? s.active : ""}>
-            <Link href="#solutions">Solutions</Link>
-          </li>
-          <li className={activeSection === "about" ? s.active : ""}>
-            <Link href="#about">About us</Link>
-          </li>
+          {menu.map((item, index) => (
+            <li
+              className={activeSection === item.id ? s.active : ""}
+              key={index}
+            >
+              <Link href={item.link}>{item.title}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
