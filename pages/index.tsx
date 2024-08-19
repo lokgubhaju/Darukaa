@@ -129,12 +129,12 @@ export default function Home() {
           </section>
 
           {/* Solutions */}
-          <section
+          {/* <section
             className={cn(s["home__solutions"], "mt-10 container")}
             id="solutions"
           >
             <TextwithMedia />
-          </section>
+          </section> */}
 
           {/* Why it matters */}
           <section className={cn(s["home__why-it-matters"], "mt-10 container")}>
