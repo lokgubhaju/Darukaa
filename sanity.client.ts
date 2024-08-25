@@ -1,6 +1,6 @@
 import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
-import type { ImageUrlBuilder } from '@sanity/image-url/lib/types/types';
+import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 
 // Ensure the environment variables are loaded
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string;
@@ -14,7 +14,7 @@ export const client = createClient({
   apiVersion,   // Set API version to match Sanity config
 });
 
-const builder: ImageUrlBuilder = imageUrlBuilder(client);
+export const builder: ImageUrlBuilder = imageUrlBuilder(client);
 
 export function urlFor(source: any) {
   return builder.image(source);
