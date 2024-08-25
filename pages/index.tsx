@@ -12,11 +12,63 @@ import AboutCards from "@/Components/About/About";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { GetStaticProps } from "next";
+import { sanityClient } from "../src/sanity/lib/client";
+import { authorType } from "@/src/sanity/schemaTypes/authorType";
+import { blockContentType } from "@/src/sanity/schemaTypes/blockContentType";
 
-export default function Home() {
+interface Post {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  Author?: { name: string };
+  body?: string;
+  mainImage?: string;
+  name: string;
+  categories: string;
+  publishedAt: string;
+}
+
+interface HomePageProps {
+  posts: Post[];
+}
+
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  const query = `*[_type == "post"] { _id, title, slug, Author, mainImage, publishedAt, media, name }`; // Example query
+  const posts = await sanityClient.fetch(query);
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
+
+const Home: React.FC<HomePageProps> = ({ posts }) => {
   return (
     <>
       <Navbar />
+      <div>
+        <h1>Blog posts</h1>
+        <ul>
+          {posts.map((post) => (
+            <li key={post._id}>
+              <a href={`/post/${post.slug.current}`}>{post.title}</a>
+              <div>
+                <p className="text-red-600">{post.Author?.name}</p>
+                <p>{post._id}</p>
+                {/* <p>{blockContentType.type}</p> */}
+                <p>{post.name}</p>
+                <p>{post.publishedAt}</p>
+                {/* <Image src={post?.mainImage} /> */}
+                {/* <p>{post.author}</p> */}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
       <main className={cn(s["home"])}>
         <Head>
           <title>Darukaa Earth | Home</title>
@@ -181,4 +233,6 @@ export default function Home() {
       </main>
     </>
   );
-}
+};
+
+export default Home;
