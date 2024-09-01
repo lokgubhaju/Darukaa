@@ -2,9 +2,9 @@
   overflow: hidden;
 }
 
-.horizontal-slider--container {
-    height: 20vh
-}
+// .horizontal-slider--container {
+//     height: 20vh
+// }
 
 .horizontal-slider--inner {
     height: calc(100vh - 80px);
@@ -21,7 +21,7 @@
 }
 .horizontal-slider--inner__card {
   width: 100vw;
-  height:80vh;
+  height:100vh;
   display: flex;
   justify-content: center;
   align-items: center;
