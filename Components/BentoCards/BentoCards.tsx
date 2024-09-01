@@ -47,8 +47,15 @@ const BentoCard: React.FC<BentoCardProps> = ({
       />
     )}
     {video && (
-      <div className="w-full h-full object-cover left-0 top-0 absolute">
-        <video autoPlay muted loop playsInline poster={posterImage}>
+      <div className={cn(s["bento-cards__lists--card__video"])}>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={posterImage}
+          className="w-full h-full"
+        >
           <source src={video} type="video/mp4" />
         </video>
       </div>

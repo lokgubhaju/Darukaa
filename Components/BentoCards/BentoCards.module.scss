@@ -35,6 +35,9 @@
       &__body {
         @apply text-base mb-2;
       }
+      &__video{
+        @apply w-full h-full object-cover left-0 top-0 absolute;
+      }
     }
   }
 }
