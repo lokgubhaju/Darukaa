@@ -1,0 +1,33 @@
+.horizontal-slider--outer {
+  overflow: hidden;
+}
+
+.horizontal-slider--container {
+    height: 20vh
+}
+
+.horizontal-slider--inner {
+    height: calc(100vh - 80px);
+    width: 300vw;
+    display: flex;
+    position: relative;
+
+  &__card  {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.horizontal-slider--inner__card {
+  width: 100vw;
+  height:80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &--body-copy {
+    width: 80vw;
+  }
+}

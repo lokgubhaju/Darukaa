@@ -12,6 +12,7 @@ import AboutCards from "@/Components/About/About";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import HorizontalSlider from "@/Components/Slider/HorizontalSlider";
 import BentoCards from "@/Components/BentoCards/BentoCards";
 
 export default function Home() {
@@ -44,7 +45,7 @@ export default function Home() {
           </section>
 
           {/* Introduction */}
-          <section
+          {/* <section
             className={cn(
               s["home__introduction"],
               "flex flex-col md:flex-row bg-white relative rounded-20 mt-10 container"
@@ -89,14 +90,6 @@ export default function Home() {
               </p>
             </div>
             <div className="w-full md:w-1/2 p-4">
-              {/* <Image
-              src={"/images/hero.gif"}
-              alt=""
-              layout="responsive"
-              width={100}
-              height={100}
-              className="rounded-xl overflow-hidden"
-            /> */}
               <video
                 autoPlay
                 muted
@@ -108,6 +101,10 @@ export default function Home() {
                 <source src="/videos/who-we-are.mp4" type="video/mp4" />
               </video>
             </div>
+          </section> */}
+
+          <section>
+            <HorizontalSlider />
           </section>
 
           {/* What we do */}
