@@ -12,6 +12,7 @@ import AboutCards from "@/Components/About/About";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import BentoCards from "@/Components/BentoCards/BentoCards";
 
 export default function Home() {
   return (
@@ -118,6 +119,10 @@ export default function Home() {
             id="what-we-do"
           >
             <GridCards />
+          </section>
+
+          <section>
+            <BentoCards />
           </section>
 
           {/* Services | How we do it */}

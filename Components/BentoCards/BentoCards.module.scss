@@ -1,0 +1,40 @@
+.bento-cards {
+  background-color: rgb(44, 40, 40);
+  &__lists {
+    @apply flex flex-wrap gap-6 mt-10 justify-center;
+
+    &--card {
+      @apply p-4 rounded-lg shadow-lg; /* Example styles; adjust as needed */
+      border-radius: 8px;
+      overflow: hidden;
+      padding: 1rem;
+      position: relative;
+      height: 420px;
+      flex: 1 1 300px;
+
+      &-3 {
+        width: 50%;
+        @screen md {
+        }
+      }
+      &-6 {
+        @screen md {
+          flex: 2 1 600px;
+        }
+      }
+
+      &__title,
+      &__body {
+        @apply relative z-10;
+      }
+
+      &__title {
+        @apply font-bold text-lg mb-2;
+      }
+
+      &__body {
+        @apply text-base mb-2;
+      }
+    }
+  }
+}
