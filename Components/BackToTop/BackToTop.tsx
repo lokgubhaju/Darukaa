@@ -27,7 +27,7 @@ export default function BackToTop() {
   return (
     <div
       id="scroll-to-top"
-      className={cn(s["back-to-top"], "flex justify-center items-center", {
+      className={cn(s["back-to-top"], {
         [s["back-to-top__active"]]: isActive,
       })}
       onClick={scrollToTop}
