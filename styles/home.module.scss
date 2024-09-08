@@ -9,12 +9,9 @@
 
   &__hero {
     @apply bg-gray overflow-hidden relative;
-    height: 600px;
+    height: calc(100vh - 100px);
     border-radius: 40px;
     color: white;
-    @screen xxl {
-      height: 800px;
-    }
     &__overlay {
       position: absolute;
       top: 50%;

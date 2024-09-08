@@ -34,7 +34,7 @@ export default function Home() {
               poster="/images/darukaa-hero.png"
               className="w-full h-full object-cover"
             >
-              <source src="/videos/darukaa-hero.mp4" type="video/mp4" />
+              <source src="/videos/banner_video.mp4" type="video/mp4" />
             </video>
             <div className={cn(s["home__hero__overlay"])}>
               <h1 className="text-h1-md-max md:text-h1">
@@ -103,7 +103,7 @@ export default function Home() {
             </div>
           </section> */}
 
-          <section className="mt-10">
+          <section className="mt-10 rounded-20 overflow-hidden">
             <HorizontalSlider />
           </section>
 
@@ -118,7 +118,7 @@ export default function Home() {
             <GridCards />
           </section>
 
-          <section>
+          <section className="mt-10 container">
             <BentoCards />
           </section>
 
