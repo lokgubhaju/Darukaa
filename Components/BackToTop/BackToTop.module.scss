@@ -1,5 +1,5 @@
 .back-to-top {
-  @apply cursor-pointer h-[50px] w-[50px] fixed bottom-[50px] -right-20 justify-center items-center rounded-full bg-white text-black text-xl;
+  @apply cursor-pointer h-[50px] w-[50px] fixed bottom-[50px] -right-20 flex justify-center items-center rounded-full bg-white text-black text-xl;
   box-shadow: 0 0 5px 0px #888;
   transition: 300ms;
   &:hover {
