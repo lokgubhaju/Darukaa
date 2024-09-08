@@ -14,6 +14,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import HorizontalSlider from "@/Components/Slider/HorizontalSlider";
 import BentoCards from "@/Components/BentoCards/BentoCards";
+import BackToTop from "@/Components/BackToTop/BackToTop";
 
 export default function Home() {
   return (
@@ -181,6 +182,7 @@ export default function Home() {
           </section>
         </div>
       </main>
+      <BackToTop />
     </>
   );
 }

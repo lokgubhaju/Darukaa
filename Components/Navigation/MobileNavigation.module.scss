@@ -20,7 +20,7 @@
         transform: translateY(15px) rotate(-45deg);
       }
       .hamburger-icon__line:nth-child(2) {
-        transform: translateX(-15px);
+        transform: translateX(-45px);
         opacity: 0;
         transition: transform 0.5s, opacity 0.5s ease;
       }
