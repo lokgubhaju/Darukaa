@@ -23,11 +23,10 @@ const MobileNavigation = () => {
   return (
     <div className={cn(s["mobile-navigation"])}>
       <Image
-        src={"/images/logo.png"}
+        src={"/images/logo_mobile.png"}
         alt="Logo of Darukaa"
-        width={200}
-        height={40}
-        className="h-10"
+        width={60}
+        height={60}
       />
       <div
         className={cn(s["hamburger-icon"], {

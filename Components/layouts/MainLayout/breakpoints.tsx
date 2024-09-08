@@ -1,0 +1,3 @@
+export const BREAKPOINT_MOBILE_MAX = 767
+export const BREAKPOINT_TABLET_MAX = 1023
+export const BREAKPOINT_TABLET_MIN = 768

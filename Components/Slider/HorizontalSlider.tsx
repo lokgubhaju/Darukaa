@@ -49,7 +49,7 @@ const HorizontalSlider = () => {
         duration: 1,
         scrollTrigger: {
           trigger: triggerRef.current,
-          start: "top top",
+          start: "top 100px",
           end: "2000 top",
           scrub: true,
           pin: true
