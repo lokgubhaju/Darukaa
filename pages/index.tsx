@@ -15,18 +15,22 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import HorizontalSlider from "@/Components/Slider/HorizontalSlider";
 import BentoCards from "@/Components/BentoCards/BentoCards";
 import BackToTop from "@/Components/BackToTop/BackToTop";
+import HeroSequence from "@/Components/HeroSequence/HeroSequence";
+import MarqueeSlider from "@/Components/MarqueeSlider/MarqueeSlider";
+import LottieAnimation from "@/Components/LottieAnimation/LottieAnimation";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Darukaa Earth | Home</title>
+      </Head>
       <Navbar />
+      <HeroSequence />
       <main className={cn(s["home"])}>
-        <Head>
-          <title>Darukaa Earth | Home</title>
-        </Head>
         <div>
           {/* Hero Section */}
-          <section className={cn(s["home__hero"], "container")} id="hero">
+          {/* <section className={cn(s["home__hero"], "container")} id="hero">
             <video
               autoPlay
               muted
@@ -43,7 +47,7 @@ export default function Home() {
               </h1>
               <p>Innovating Carbon & Biodiversity Solutions</p>
             </div>
-          </section>
+          </section> */}
 
           {/* Introduction */}
           {/* <section
@@ -104,31 +108,24 @@ export default function Home() {
             </div>
           </section> */}
 
-          <section className="mt-10 rounded-20 overflow-hidden">
-            <HorizontalSlider />
-          </section>
+          {/* <HorizontalSlider /> */}
 
-          {/* What we do */}
-          <section
-            className={cn(
-              s["home__what-we-do"],
-              "rounded-20 overflow-hidden mt-10 container"
-            )}
-            id="what-we-do"
-          >
-            <GridCards />
-          </section>
-
-          <section className="mt-10 container">
+          <section className="pt-10 container">
             <BentoCards />
           </section>
 
+          <LottieAnimation />
+
           {/* Services | How we do it */}
           <section
-            className={cn(s["home__services"], "mt-10 container")}
+            className={cn(s["home__services"], "pt-10 container")}
             id="services"
           >
             <StackCards />
+          </section>
+          <section className="mt-10" id="collaborations">
+            <h1 className="text-h1-md-max md:text-h1 container">Collaborations</h1>
+            <MarqueeSlider />
           </section>
 
           {/* Solutions */}

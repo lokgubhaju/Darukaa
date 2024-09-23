@@ -63,8 +63,8 @@ const Panel: React.FC = () => {
     {
       id: "card-1",
       pretitle: "01",
-      headline: "Multimodal data collection",
-      body: "We begin with multimodal data collection, integrating satellite and drone imagery, geospatial layers, IoT devices, and on-ground data to create a comprehensive view of the environment.",
+      headline: "Holistic Ecosystems & Biodiversity Focus",
+      body: "Darukaa Earth goes beyond traditional carbon projects by creating biodiversity credits and taking a holistic approach that restores entire ecosystems, integrating biodiversity, soil health, and ecosystem services into every project.",
       // videoUrl: "/videos/darukaa-hero.mp4",
       altText: "card-three",
       imageUrl: "/images/multimodal-data.gif",
@@ -72,8 +72,8 @@ const Panel: React.FC = () => {
     {
       id: "card-2",
       pretitle: "02",
-      headline: "Cutting edge AI-ML technology",
-      body: "Our cutting-edge AI technology then processes this data, delivering precise carbon and environmental models that reveal critical insights.",
+      headline: "Digital tracking vs ground tracking",
+      body: "Darukaa Earth uses advanced digital tools, including satellite, UAV, and IoT sensors, enabling continuous and precise biodiversity tracking and project outcomes, instead of relying solely on manual, ground-based methods.",
       videoUrl: "/videos/cutting-edge-ai.mp4",
       posterUrl: "/images/cutting-edge-ai.png",
       altText: "card-two",
@@ -81,8 +81,8 @@ const Panel: React.FC = () => {
     {
       id: "card-3",
       pretitle: "03",
-      headline: "Holistic Visualization",
-      body: "To make these insights accessible, our holistic visualization simplifies complex data into clear, actionable reports on intuitive dashboards.",
+      headline: "Advanced AI & Technology vs. Traditional Methods",
+      body: "Darukaa Earth uses cutting-edge AI, drone technology, and machine learning for wildlife detection, forest monitoring, and ecosystem health assessments, providing far more accurate and real-time data.",
       videoUrl: "/videos/holistic-view.mp4",
       posterUrl: "/images/holistic-view.png",
       altText: "card-three",
@@ -90,16 +90,25 @@ const Panel: React.FC = () => {
     {
       id: "card-4",
       pretitle: "04",
-      headline: "Integrity is a key",
-      body: "Integrity is key, so we use blockchain technology to securely register carbon credits, ensuring they are transparent and traceable.",
+      headline: "Nature-Based Solutions vs. Conventional Industrial Approaches",
+      body: "Darukaa prioritizes nature-based solutions like mangrove reforestation and agroforestry, leading to stronger, more sustainable ecological restoration.",
       imageUrl: "/images/integrity-blockchain.gif",
       altText: "card-three",
     },
     {
       id: "card-5",
       pretitle: "05",
-      headline: "Data Provision for reporting",
-      body: "We facilitate regulatory reporting for TNFD, CSRD, and BRSR standards, helping you stay compliant and recognized globally.",
+      headline: "Community Empowerment vs. Top-Down Approaches",
+      body: "Darukaa Earth actively involves local communities in environmental monitoring, creating sustainable livelihoods and ensuring long-term project sustainability through on-ground engagement.",
+      videoUrl: "/videos/data-provision.mp4",
+      posterUrl: '/images/data-provision.png',
+      altText: "card-three",
+    },
+    {
+      id: "card-6",
+      pretitle: "06",
+      headline: "Scalable & Sustainable vs. Short-Term Focus",
+      body: "Darukaa Earth designs projects for long-term scalability and sustainability, ensuring lasting environmental and social impact.",
       videoUrl: "/videos/data-provision.mp4",
       posterUrl: '/images/data-provision.png',
       altText: "card-three",
@@ -108,7 +117,7 @@ const Panel: React.FC = () => {
   return (
     <main>
       <div className={cn(s["stack-cards__text"], "text-neutral-600")}>
-        <p className="h1-md-max md:h1">How we do it</p>
+        <p className="h1-md-max md:h1">Our Unmatched Edge</p>
       </div>
       <ul>
         {cards.map((card) => (

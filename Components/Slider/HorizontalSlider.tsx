@@ -2,9 +2,8 @@ import cn from "classnames";
 import s from "./HorizontalSlider.module.scss";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import React from "react";
 
 interface HorizontalSliderCardProps {
   id: string;
@@ -24,11 +23,15 @@ const HorizontalSliderCard: React.FC<HorizontalSliderCardProps> = ({
   className,
 }) => (
   <div
-    className={cn(s["horizontal-slider--inner__card"], 'p-8')}
+    className={cn(s["horizontal-slider--inner__card"], "p-8")}
     style={{ backgroundColor }}
   >
     <h1 className="h1-md-max md:h1 capitalize">{title}</h1>
-    <p className={cn(s["horizontal-slider--inner__card--body-copy"], 'text-2xl')}>{description}</p>
+    <p
+      className={cn(s["horizontal-slider--inner__card--body-copy"], "text-2xl")}
+    >
+      {description}
+    </p>
     {media && <p>{media}</p>}
   </div>
 );
@@ -52,7 +55,8 @@ const HorizontalSlider = () => {
           start: "top 100px",
           end: "2000 top",
           scrub: true,
-          pin: true
+          pin: true,
+          markers: true,
         },
       }
     );
