@@ -11,7 +11,6 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 });
-gsap.registerPlugin(ScrollTrigger);
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={poppins.className}>

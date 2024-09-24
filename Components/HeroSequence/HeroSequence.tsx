@@ -18,9 +18,43 @@ const HeroSequence = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const images = useRef<HTMLImageElement[]>([]);
-  const textPanelRefs = useRef<HTMLDivElement []>([]);
+  const textPanelRefs = useRef<HTMLDivElement[]>([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const frameCount = imageSequence.length;
+  const currentProgressRef = useRef(0); // Store the current progress
+
+  const renderFrame = (index: number) => {
+    const canvas = canvasRef.current;
+    const context = canvas?.getContext("2d");
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    if (context && images.current[index]) {
+      context.clearRect(0, 0, screenWidth, screenHeight);
+      context.drawImage(
+        images.current[index],
+        0,
+        0,
+        screenWidth,
+        screenHeight
+      );
+    }
+  };
+
+  const updateCanvasSize = () => {
+    const canvas = canvasRef.current;
+    const context = canvas?.getContext("2d");
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    if (canvas && context) {
+      canvas.width = screenWidth;
+      canvas.height = screenHeight;
+    }
+
+    // Re-render the current frame after resizing
+    renderFrame(Math.floor(currentProgressRef.current * frameCount));
+  };
 
   // Preload all images
   useEffect(() => {
@@ -33,7 +67,6 @@ const HeroSequence = () => {
           images.current[index] = img;
           loadedImages += 1;
 
-          // Once all images are loaded, set state to true
           if (loadedImages === frameCount) {
             setImagesLoaded(true);
           }
@@ -44,31 +77,20 @@ const HeroSequence = () => {
   }, [frameCount]);
 
   useEffect(() => {
-    if (!imagesLoaded) return; // Only execute if images are fully loaded
+    if (!imagesLoaded) return;
 
     const canvas = canvasRef.current;
     const context = canvas?.getContext("2d");
-    const screenWidth = window.innerWidth; // Use innerWidth for visible viewport
-    const screenHeight = window.innerHeight; // Use innerHeight for visible viewport
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
     if (canvas && context) {
       canvas.width = screenWidth;
       canvas.height = screenHeight;
     }
 
-    const renderFrame = (index: number) => {
-      if (context && images.current[index]) {
-        context.clearRect(0, 0, screenWidth, screenHeight);
-        context.drawImage(
-          images.current[index],
-          0,
-          0,
-          screenWidth,
-          screenHeight
-        );
-      }
-    };
-
     const updateImage = (progress: number) => {
+      currentProgressRef.current = progress; // Store the current progress
       const frameIndex = Math.min(
         frameCount - 1,
         Math.floor(progress * frameCount)
@@ -84,12 +106,10 @@ const HeroSequence = () => {
           trigger: containerRef.current,
           start: "top top",
           end: `+=${window.innerHeight * frameCount * 0.01}`,
-          // end: "bottom top", // Adjust this multiplier for total scroll duration
           scrub: true,
           pin: true,
           markers: true,
           pinSpacing: true,
-          // anticipatePin: 1,
           onUpdate: (self) => updateImage(self.progress),
         },
         id: "heroSequence",
@@ -102,7 +122,7 @@ const HeroSequence = () => {
     textPanelRefs.current.forEach((textPanel, index) => {
       gsap.fromTo(
         textPanel,
-        { opacity: 0, y: 50 }, // Start with opacity 0 and move up
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
@@ -111,21 +131,25 @@ const HeroSequence = () => {
             start: "top 75%",
             end: "top 50%",
             scrub: true,
-            toggleActions: "play none none reverse", // Trigger animation in and out
+            toggleActions: "play none none reverse",
           },
-          duration: 1, // Animation duration
+          duration: 1,
         }
       );
     });
 
+    // Handle browser resize
+    window.addEventListener("resize", updateCanvasSize);
+
     // Refresh ScrollTrigger calculations after layout changes
     ScrollTrigger.refresh();
 
-    // Clean up ScrollTrigger on unmount
+    // Clean up on unmount
     return () => {
+      window.removeEventListener("resize", updateCanvasSize);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [frameCount, imagesLoaded]); // Only re-run when images are loaded
+  }, [frameCount, imagesLoaded]);
 
   const scrollTexts = [
     {
@@ -163,7 +187,7 @@ const HeroSequence = () => {
               className={cn(s["hero-sequence-text-panels__text-panel"])}
               key={index}
               ref={(el) => {
-                if (el) textPanelRefs.current[index] = el; // Assign only if 'el' exists
+                if (el) textPanelRefs.current[index] = el;
               }}
             >
               <p>{item.text}</p>

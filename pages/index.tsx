@@ -18,6 +18,7 @@ import BackToTop from "@/Components/BackToTop/BackToTop";
 import HeroSequence from "@/Components/HeroSequence/HeroSequence";
 import MarqueeSlider from "@/Components/MarqueeSlider/MarqueeSlider";
 import LottieAnimation from "@/Components/LottieAnimation/LottieAnimation";
+import Slider from "@/Components/Slider/Slider";
 
 export default function Home() {
   return (
@@ -108,6 +109,9 @@ export default function Home() {
             </div>
           </section> */}
 
+          <section className="pt-10">
+            <Slider />
+          </section>
           {/* <HorizontalSlider /> */}
 
           <section className="pt-10 container">
@@ -124,7 +128,9 @@ export default function Home() {
             <StackCards />
           </section>
           <section className="mt-10" id="collaborations">
-            <h1 className="text-h1-md-max md:text-h1 container">Collaborations</h1>
+            <h1 className="text-h1-md-max md:text-h1 container">
+              Collaborations
+            </h1>
             <MarqueeSlider />
           </section>
 
@@ -137,9 +143,9 @@ export default function Home() {
           </section> */}
 
           {/* Why it matters */}
-          <section className={cn(s["home__why-it-matters"], "mt-10 container")}>
+          {/* <section className={cn(s["home__why-it-matters"], "mt-10 container")}>
             <GalleryCards />
-          </section>
+          </section> */}
 
           {/* Contact */}
 

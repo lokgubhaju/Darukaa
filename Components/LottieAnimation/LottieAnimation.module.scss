@@ -10,13 +10,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
     canvas {
       position: absolute;
-      width: 60vw;
+      width: 50vw;
       height: 70%;
-      right: 0;
+      right: 2rem;
       max-height: 100%;
+      border-radius: 20px;
       object-fit: cover;
     }
   }
@@ -25,17 +25,21 @@
     // flex-direction:column;
     color: black;
     position: absolute;
-    margin-left: 16rem;
-    top: 100vh;
+    margin-left: 5rem;
+    top: 0;
     &__text-panel {
       backdrop-filter: blur(10px);
       border-radius: 8px;
       padding: 20px;
-      margin-top: 300px;
-      width: 50%;
+      margin-top: 500px;
+      width: 40%;
       text-align: left;
-      p {
-        font-size: clamp(0.875rem, 1.505vw + 0.546rem, 1.75rem);
+      &__headline{
+        font-size: 36px;
+      }
+      &__body-copy{
+        margin-top: 2rem;
+        font-size: 24px;
         line-height: clamp(1.313rem, 1.656vw + 0.95rem, 2.275rem);
       }
     }

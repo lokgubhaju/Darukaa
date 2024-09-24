@@ -28,8 +28,8 @@ function App() {
           <Image
             src="/images/partners/CMAI.png"
             alt="Image 1"
-            width={200}
-            height={100}
+            width={100}
+            height={50}
           />
         </a>
       </SplideSlide>
@@ -38,8 +38,8 @@ function App() {
           <Image
             src="/images/partners/Heliware.png"
             alt="Image 2"
-            width={200}
-            height={100}
+            width={100}
+            height={50}
           />
         </a>
       </SplideSlide>
@@ -48,8 +48,8 @@ function App() {
           <Image
             src="/images/partners/RSIGST.png"
             alt="Image 2"
-            width={200}
-            height={100}
+            width={100}
+            height={50}
           />
         </a>
       </SplideSlide>
@@ -58,8 +58,8 @@ function App() {
           <Image
             src="/images/partners/CMAI.png"
             alt="Image 1"
-            width={200}
-            height={100}
+            width={100}
+            height={50}
           />
         </a>
       </SplideSlide>
@@ -68,8 +68,8 @@ function App() {
           <Image
             src="/images/partners/Heliware.png"
             alt="Image 2"
-            width={200}
-            height={100}
+            width={100}
+            height={50}
           />
         </a>
       </SplideSlide>
@@ -78,8 +78,8 @@ function App() {
           <Image
             src="/images/partners/RSIGST.png"
             alt="Image 2"
-            width={200}
-            height={100}
+            width={100}
+            height={50}
           />
         </a>
       </SplideSlide>

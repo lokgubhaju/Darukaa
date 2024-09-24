@@ -22,17 +22,24 @@
   &-text-panels {
     // display: flex;
     // flex-direction:column;
-    color: black;
+    color: white;
     position: absolute;
     top: 50vh;
+    @apply px-3;
+    @screen md {
+      margin-left: 6rem;
+    }
     &__text-panel {
-      backdrop-filter:blur(10px);
+      backdrop-filter: blur(10px);
       border-radius: 8px;
       padding: 20px;
       margin: 50px 0;
-      width: 50%;
       text-align: left;
-      font-size: clamp(0.875rem, 1.505vw + 0.546rem, 1.75rem);line-height: clamp(1.313rem, 1.656vw + 0.95rem, 2.275rem);
+      font-size: clamp(0.875rem, 1.505vw + 0.546rem, 1.75rem);
+      line-height: clamp(1.313rem, 1.656vw + 0.95rem, 2.275rem);
+      @screen md {
+        width: 50%;
+      }
     }
   }
 }

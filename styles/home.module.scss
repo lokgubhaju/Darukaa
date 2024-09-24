@@ -42,6 +42,7 @@
 
   &__contact-us {
     height: 30vh;
-    @apply p-3 md:p-5 bg-white text-black;
+    background-color: #fffaf2;
+    @apply p-3 md:p-5 text-black;
   }
 }
