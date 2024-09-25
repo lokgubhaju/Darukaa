@@ -7,7 +7,7 @@ interface BentoCardProps {
   id: string;
   title: string;
   body: string;
-  backgroundColor: string;
+  backgroundColor?: string;
   image?: string;
   imageAlt?: string;
   video?: string;
