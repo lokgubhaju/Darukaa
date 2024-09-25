@@ -181,8 +181,8 @@ const LottieAnimation = () => {
                 if (el) textPanelRefs.current[index] = el;
               }}
             >
-              <h2 className="text-5xl">{item.title}</h2>
-              <p className="mt-4">{item.text}</p>
+              <h2 className={cn(s["lottie-animation-text-panels__text-panel__headline"])}>{item.title}</h2>
+              <p className={cn(s["lottie-animation-text-panels__text-panel__body-copy"])}>{item.text}</p>
             </div>
           ))}
         </div>

@@ -129,7 +129,7 @@ const BentoCards: React.FC = () => {
 
   return (
     <main className={(s["bento-cards"], "container")}>
-      <h1 className="text-center text-h1-md-max md:text-h1">
+      <h1 className="text-center text-h1-md-max md:text-h1 text-neutral-600">
         Our Impact-Driven Solutions
       </h1>
       <div className={cn(s["bento-cards__lists"])}>
