@@ -88,7 +88,7 @@ const LottieAnimation = () => {
           pin: true,
           pinSpacing: true,
           onUpdate: (self) => updateImage(self.progress),
-          markers: true,
+          markers: false,
         },
       });
 

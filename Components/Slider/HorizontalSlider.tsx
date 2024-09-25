@@ -56,7 +56,7 @@ const HorizontalSlider = () => {
           end: "2000 top",
           scrub: true,
           pin: true,
-          markers: true,
+          markers: false,
         },
       }
     );

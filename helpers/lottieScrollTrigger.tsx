@@ -29,7 +29,7 @@ function LottieScrollTrigger(vars: LottieScrollTriggerVars): AnimationItem {
       start: vars.start || 'top top',
       end: speeds[vars.speed || 'medium'],
       scrub: vars.scrub || 1,
-      markers: vars.markers || false,
+      // markers: vars.markers || false,
     },
     animation = lottie.loadAnimation({
       container: target, // target is now asserted to be an Element

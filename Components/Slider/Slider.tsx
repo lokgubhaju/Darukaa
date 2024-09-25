@@ -46,7 +46,7 @@ function Slider() {
   );
 }
 
-const updateProgress = (splide) => {
+const updateProgress = (splide: any) => {
   const progress = document.getElementById("progress");
   if (progress) {
     const totalSlides = splide.length;

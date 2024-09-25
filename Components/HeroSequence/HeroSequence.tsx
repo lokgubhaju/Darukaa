@@ -108,7 +108,7 @@ const HeroSequence = () => {
           end: `+=${window.innerHeight * frameCount * 0.01}`,
           scrub: true,
           pin: true,
-          markers: true,
+          markers: false,
           pinSpacing: true,
           onUpdate: (self) => updateImage(self.progress),
         },
