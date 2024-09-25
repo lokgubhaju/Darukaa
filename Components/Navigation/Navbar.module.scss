@@ -23,12 +23,20 @@
     &-item {
       min-width: 150px;
     }
-    li {
+    li{
       font-size: 18px;
+      padding: 8px;
       a {
         text-decoration: none;
         color: #333;
         transition: color 0.3s ease;
+      }
+      &:last-child{
+        background: green;
+        border-radius: 4px;
+        a{
+          color: white;
+        }
       }
     }
     li.active a {

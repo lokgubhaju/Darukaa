@@ -10,10 +10,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &__inner{
+      position:absolute;
+      right:0;
+      height:65%;
+      width: 60%;
+    }
     canvas {
       position: absolute;
-      width: 50vw;
-      height: 70%;
+      width: 100%;
+      height: 100%;
       right: 2rem;
       max-height: 100%;
       border-radius: 20px;
@@ -26,12 +33,12 @@
     color: black;
     position: absolute;
     margin-left: 5rem;
-    top: 0;
+    top: 45vh;
     &__text-panel {
       backdrop-filter: blur(10px);
       border-radius: 8px;
       padding: 20px;
-      margin-top: 500px;
+      margin: 500px 0;
       width: 40%;
       text-align: left;
       &__headline{

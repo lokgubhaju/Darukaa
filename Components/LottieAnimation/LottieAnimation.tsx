@@ -35,7 +35,6 @@ const LottieAnimation = () => {
           images.current[index] = img;
           loadedImages += 1;
 
-          // Once all images are loaded, set state to true
           if (loadedImages === frameCount) {
             setImagesLoaded(true);
           }
@@ -45,58 +44,57 @@ const LottieAnimation = () => {
     loadImages();
   }, [frameCount]);
 
+  // Function to refresh ScrollTrigger after layout changes
+  const refreshScrollTrigger = () => {
+    requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
+  };
+
+  // Ensure ScrollTrigger setup after images are fully loaded
   useEffect(() => {
-    if (!imagesLoaded) return; // Only execute if images are fully loaded
+    if (!imagesLoaded) return;
 
     const canvas = canvasRef.current;
     const context = canvas?.getContext("2d");
-    const screenWidth = window.innerWidth; // Use innerWidth for visible viewport
-    const screenHeight = window.innerHeight; // Use innerHeight for visible viewport
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
     if (canvas && context) {
       canvas.width = screenWidth;
       canvas.height = screenHeight;
     }
 
-    const renderFrame = (index: number) => {
+    const renderFrame = (index: any) => {
       if (context && images.current[index]) {
         context.clearRect(0, 0, screenWidth, screenHeight);
-        context.drawImage(
-          images.current[index],
-          0,
-          0,
-          screenWidth,
-          screenHeight
-        );
+        context.drawImage(images.current[index], 0, 0, screenWidth, screenHeight);
       }
     };
 
-    const updateImage = (progress: number) => {
-      const frameIndex = Math.min(
-        frameCount - 1,
-        Math.floor(progress * frameCount)
-      );
+    const updateImage = (progress: any) => {
+      const frameIndex = Math.min(frameCount - 1, Math.floor(progress * frameCount));
       renderFrame(frameIndex);
     };
 
-    // ScrollTrigger for canvas pinning and image sequence animation
-    gsap.to(
-      {},
-      {
+    // Delay the initialization of ScrollTrigger to allow for layout stabilization
+    requestAnimationFrame(() => {
+      gsap.to({}, {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: `+=${window.innerHeight * frameCount * 0.005}`,
-          // end: "bottom top", // Adjust this multiplier for total scroll duration
+          end: `+=${window.innerHeight * 2}`, // Adjust scroll duration
           scrub: true,
           pin: true,
-          markers: true,
           pinSpacing: true,
-          // anticipatePin: 1,
           onUpdate: (self) => updateImage(self.progress),
+          markers: true,
         },
-        id: "heroSequence",
-      }
-    );
+      });
+
+      // Initial refresh to correct positioning
+      ScrollTrigger.refresh();
+    });
 
     // Initial frame render
     renderFrame(0);
@@ -104,7 +102,7 @@ const LottieAnimation = () => {
     textPanelRefs.current.forEach((textPanel, index) => {
       gsap.fromTo(
         textPanel,
-        { opacity: 0, y: 50 }, // Start with opacity 0 and move up
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
@@ -113,21 +111,38 @@ const LottieAnimation = () => {
             start: "top 75%",
             end: "top 50%",
             scrub: true,
-            toggleActions: "play none none reverse", // Trigger animation in and out
+            toggleActions: "play none none reverse",
           },
-          duration: 1, // Animation duration
         }
       );
+
+      // Fade-out animation
+      // gsap.to(textPanel, {
+      //   opacity: 0,
+      //   scrollTrigger: {
+      //     trigger: textPanel,
+      //     start: "top 50%",  // Start fading out when the top of the element is 20% from the top of the viewport
+      //     end: "top 20%",     // End the fade-out when the top of the element reaches the top of the viewport
+      //     scrub: true,
+      //     toggleActions: "play none none reverse",
+      //   },
+      // });
     });
 
-    // Refresh ScrollTrigger calculations after layout changes
-    ScrollTrigger.refresh();
+    // Add a load event listener to refresh ScrollTrigger once everything is fully loaded
+    window.addEventListener("load", refreshScrollTrigger);
 
-    // Clean up ScrollTrigger on unmount
+    // Resize Observer to watch for layout changes and trigger a refresh
+    const resizeObserver = new ResizeObserver(refreshScrollTrigger);
+    resizeObserver.observe(document.body);
+
+    // Cleanup on component unmount
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      window.removeEventListener("load", refreshScrollTrigger);
+      resizeObserver.disconnect();
     };
-  }, [frameCount, imagesLoaded]); // Only re-run when images are loaded
+  }, [frameCount, imagesLoaded]);
 
   const scrollTexts = [
     {
@@ -152,17 +167,18 @@ const LottieAnimation = () => {
           className={cn(s["lottie-animation-canvas-container"])}
           style={{ height: "100vh" }}
         >
+          <div className={cn(s["lottie-animation-canvas-container__inner"])}>
           <canvas ref={canvasRef} />
+          </div>
         </div>
 
-        {/* Text Panels */}
         <div className={cn(s["lottie-animation-text-panels"])}>
           {scrollTexts.map((item, index) => (
             <div
               className={cn(s["lottie-animation-text-panels__text-panel"])}
               key={index}
               ref={(el) => {
-                if (el) textPanelRefs.current[index] = el; // Assign only if 'el' exists
+                if (el) textPanelRefs.current[index] = el;
               }}
             >
               <h2 className="text-5xl">{item.title}</h2>

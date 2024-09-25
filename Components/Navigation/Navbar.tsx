@@ -7,12 +7,6 @@ import MobileNavigation from "./MobileNavigation";
 import { useMobile } from "../../hooks/use-mobile";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen((open) => !open);
-  };
-
   const { isMobile } = useMobile()
 
   const [activeSection, setActiveSection] = useState(null);
@@ -41,11 +35,10 @@ export default function Navbar() {
 
   const menu = [
     { title: "Home", link: "/", id: "home" },
-    { title: "Introduction", link: "#introduction", id: "introduction" },
-    { title: "What we do", link: "#what-we-do", id: "what-we-do" },
-    { title: "Services", link: "#services", id: "services" },
-    { title: "Collaborations", link: "#collaborations", id: "collaborations" },
-    // { title: "About us", link: "#about", id:'about' },
+    { title: "Solutions", link: "#solutions", id: "solutions" },
+    { title: "Approach", link: "#approach", id: "approach" },
+    { title: "Strengths", link: "#strengths", id: "strengths" },
+    { title: "Get in touch", link: "#contact", id: "contact" },
   ];
 
   return (

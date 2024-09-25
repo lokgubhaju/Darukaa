@@ -114,21 +114,22 @@ export default function Home() {
           </section>
           {/* <HorizontalSlider /> */}
 
-          <section className="pt-10 container">
+          <section className="pt-10 container" id="solutions">
             <BentoCards />
           </section>
-
-          <LottieAnimation />
+          <section id="approach">
+            <LottieAnimation />
+          </section>
 
           {/* Services | How we do it */}
           <section
             className={cn(s["home__services"], "pt-10 container")}
-            id="services"
+            id="strengths"
           >
             <StackCards />
           </section>
           <section className="mt-10" id="collaborations">
-            <h1 className="text-h1-md-max md:text-h1 container">
+            <h1 className="text-h1-md-max md:text-h1 container text-neutral-600">
               Collaborations
             </h1>
             <MarqueeSlider />
@@ -167,9 +168,9 @@ export default function Home() {
         </section> */}
 
           {/* Contact us */}
-          <section className="container mt-10 rounded-20 overflow-hidden">
+          <section className="container mt-10 rounded-20 overflow-hidden" id="contact">
             <div className={cn(s["home__contact-us"])}>
-              <h1 className="text-h1-md-max md:text-h1">Contact us</h1>
+              <h1 className="text-h1-md-max md:text-h1 text-neutral-600">Contact us</h1>
               <p className="mt-4 md:mt-8 text-base md:text-xl">
                 Contact us at:{" "}
                 <a href="mailto:info@Darukaa.com">

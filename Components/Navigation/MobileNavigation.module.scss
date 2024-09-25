@@ -31,13 +31,23 @@
   }
   &__menu {
     @apply absolute w-full bg-white text-black opacity-0 z-10 rounded-20 p-5 flex flex-col gap-3;
-    top: 60px;
+    top: 70px;
     transition: transform 0.3s, opacity 0.3s ease;
     &__active {
       transform: translateX(0);
       opacity: 1;
     }
-    &--item {
+      li{
+        width:fit-content;
+        list-style-type: none;
+        &:last-child{
+          background: green;
+          border-radius: 4px;
+          padding: 8px;
+          a{
+            color: white;
+          }
+        }
     }
   }
 }

@@ -16,9 +16,10 @@ const MobileNavigation = () => {
       title: "Home",
       link: "/",
     },
-    { title: "Services", link: "#services" },
-    { title: "Solution", link: "#solutions" },
-    { title: "Contact us", link: "#contact" },
+    { title: "Solutions", link: "#solutions", id: "solutions" },
+    { title: "Approach", link: "#approach", id: "approach" },
+    { title: "Strengths", link: "#strengths", id: "strengths" },
+    { title: "Get in touch", link: "#contact", id: "contact" },
   ];
   return (
     <div className={cn(s["mobile-navigation"])}>
@@ -44,11 +45,11 @@ const MobileNavigation = () => {
         })}
       >
         {menu.map((item, index) => (
-          <div className={cn(s["mobile-navigation__menu--item"])} key={index}>
+          <li key={index}>
             <Link href={item.link} onClick={toggleMenu}>
               {item.title}
             </Link>
-          </div>
+          </li>
         ))}
       </div>
     </div>

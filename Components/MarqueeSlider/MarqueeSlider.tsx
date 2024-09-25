@@ -1,9 +1,11 @@
-'use client'
+"use client";
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/dist/css/splide.min.css";
 import Image from "next/image";
+import cn from "classnames";
+import s from "./MarqueeSlider.module.scss";
 
 function App() {
   return (
@@ -18,12 +20,12 @@ function App() {
         perPage: 6,
         autoScroll: {
           rewind: false,
-          speed: 2,
+          speed: 1.5,
         },
       }}
       extensions={{ AutoScroll }}
     >
-      <SplideSlide className="flex items-center">
+      <SplideSlide className={cn(s["marquee-slide"])}>
         <a href="https://www.google.com/" target="_blank">
           <Image
             src="/images/partners/CMAI.png"
@@ -33,18 +35,18 @@ function App() {
           />
         </a>
       </SplideSlide>
-      <SplideSlide className="flex items-center">
+      <SplideSlide className={cn(s["marquee-slide"])}>
         <a href="https://www.google.com/" target="_blank">
           <Image
             src="/images/partners/Heliware.png"
             alt="Image 2"
-            width={100}
-            height={50}
+            width={200}
+            height={100}
           />
         </a>
       </SplideSlide>
-      <SplideSlide className="flex items-center">
-        <a href="https://www.google.com/" target="_blank">
+      <SplideSlide className={cn(s["marquee-slide"])}>
+        <a href="#" target="_blank">
           <Image
             src="/images/partners/RSIGST.png"
             alt="Image 2"
@@ -53,35 +55,29 @@ function App() {
           />
         </a>
       </SplideSlide>
-      <SplideSlide className="flex items-center">
-        <a href="https://www.google.com/" target="_blank">
-          <Image
-            src="/images/partners/CMAI.png"
-            alt="Image 1"
-            width={100}
-            height={50}
-          />
-        </a>
+      <SplideSlide className={cn(s["marquee-slide"])}>
+        <Image
+          src="/images/partners/startup-india.png"
+          alt="Image 1"
+          width={150}
+          height={100}
+        />
       </SplideSlide>
-      <SplideSlide className="flex items-center">
-        <a href="https://www.google.com/" target="_blank">
-          <Image
-            src="/images/partners/Heliware.png"
-            alt="Image 2"
-            width={100}
-            height={50}
-          />
-        </a>
+      <SplideSlide className={cn(s["marquee-slide"])}>
+        <Image
+          src="/images/partners/make-in-india.png"
+          alt="Image 2"
+          width={100}
+          height={50}
+        />
       </SplideSlide>
-      <SplideSlide className="flex items-center">
-        <a href="https://www.google.com/" target="_blank">
-          <Image
-            src="/images/partners/RSIGST.png"
-            alt="Image 2"
-            width={100}
-            height={50}
-          />
-        </a>
+      <SplideSlide className={cn(s["marquee-slide"])}>
+        <Image
+          src="/images/partners/digital-india.png"
+          alt="Image 2"
+          width={100}
+          height={50}
+        />
       </SplideSlide>
     </Splide>
   );

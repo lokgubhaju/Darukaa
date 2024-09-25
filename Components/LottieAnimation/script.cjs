@@ -1,19 +1,23 @@
-// Script to convert Lottie JSON to png files
-
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-const lottieJson = require('./Final_JSON.json'); // your lottie file
+const lottieJson = require('./Final_JSON.json'); // your Lottie file
 
 (async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
+    // Define the animation size based on the original Lottie animation data
+    const animationWidth = lottieJson.w || 1920; // Replace with the correct width from your JSON if needed
+    const animationHeight = lottieJson.h || 1080; // Replace with the correct height from your JSON if needed
+
+    await page.setViewport({ width: animationWidth, height: animationHeight });
+
     await page.setContent(`
         <html>
-        <body>
-            <div id="animation"></div>
+        <body style="margin: 0; padding: 0; background: transparent;">
+            <div id="animation" style="width: ${animationWidth}px; height: ${animationHeight}px; background: transparent;"></div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
             <script>
                 const animation = lottie.loadAnimation({
@@ -21,7 +25,12 @@ const lottieJson = require('./Final_JSON.json'); // your lottie file
                     renderer: 'canvas',
                     loop: false,
                     autoplay: false,
-                    animationData: ${JSON.stringify(lottieJson)}
+                    animationData: ${JSON.stringify(lottieJson)},
+                    rendererSettings: {
+                        preserveAspectRatio: 'xMidYMid meet', // Keeps aspect ratio without cropping
+                        clearCanvas: true,
+                        backgroundAlpha: 0
+                    }
                 });
                 window.animation = animation;
             </script>
@@ -32,7 +41,7 @@ const lottieJson = require('./Final_JSON.json'); // your lottie file
     const numFrames = 358; // Change this to match your animation's total frames
     const outputDir = './output-frames';
 
-    if (!fs.existsSync(outputDir)){
+    if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir);
     }
 
@@ -41,7 +50,11 @@ const lottieJson = require('./Final_JSON.json'); // your lottie file
             window.animation.goToAndStop(frame, true);
         }, i);
 
-        await page.screenshot({ path: path.join(outputDir, `frame-${i}.png`) });
+        // Capture screenshot with transparent background
+        await page.screenshot({
+            path: path.join(outputDir, `lottie_frame_${i}.png`),
+            omitBackground: true // Keeps background transparent
+        });
     }
 
     await browser.close();

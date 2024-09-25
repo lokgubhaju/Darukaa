@@ -12,6 +12,7 @@
     align-items: center;
     background-color: #000;
     canvas {
+      opacity: 0.5;
       width: 100vw;
       height: 100vh;
       max-width: 100%;
@@ -33,7 +34,7 @@
       backdrop-filter: blur(10px);
       border-radius: 8px;
       padding: 20px;
-      margin: 50px 0;
+      margin: 200px 0;
       text-align: left;
       font-size: clamp(0.875rem, 1.505vw + 0.546rem, 1.75rem);
       line-height: clamp(1.313rem, 1.656vw + 0.95rem, 2.275rem);

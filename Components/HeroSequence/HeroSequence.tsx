@@ -125,7 +125,7 @@ const HeroSequence = () => {
         { opacity: 0, y: 50 },
         {
           opacity: 1,
-          y: 0,
+          y: 10,
           scrollTrigger: {
             trigger: textPanel,
             start: "top 75%",
