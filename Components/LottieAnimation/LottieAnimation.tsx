@@ -10,7 +10,7 @@ const imageSequence = [
   ...Array.from(
     { length: 358 },
     (_, index) =>
-      `/images/lottie-frames/lottie_frame_${index
+      `/images/lottie-frames/test/lottie_frame_${index
         .toString()
         .padStart(3, "0")}.png`
   ),
@@ -168,7 +168,7 @@ const LottieAnimation = () => {
           style={{ height: "100vh" }}
         >
           <div className={cn(s["lottie-animation-canvas-container__inner"])}>
-          <canvas ref={canvasRef} />
+          <canvas ref={canvasRef} width = {'50vw'} height={'60vh'} id="canvas" />
           </div>
         </div>
 

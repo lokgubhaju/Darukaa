@@ -34,8 +34,10 @@ const BentoCard: React.FC<BentoCardProps> = ({
     key={id}
     style={{ backgroundColor }}
   >
-    <div className={cn(s["bento-cards__lists--card__title"])}>{title}</div>
-    <div className={cn(s["bento-cards__lists--card__body"])}>{body}</div>
+    <div className={cn(s["bento-cards__lists--card__text"])}>
+    <div className={cn(s["bento-cards__lists--card__text-title"])}>{title}</div>
+    <div className={cn(s["bento-cards__lists--card__text-body"])}>{body}</div>
+    </div>
     {image && (
       <Image
         src={image}
@@ -43,7 +45,7 @@ const BentoCard: React.FC<BentoCardProps> = ({
         height={100}
         layout="responsive"
         alt={imageAlt ? imageAlt : ""}
-        className="absolute left-0 bottom-0"
+        className="absolute left-0 top-0 object-cover !h-full"
       />
     )}
     {video && (
@@ -71,8 +73,8 @@ const BentoCards: React.FC = () => {
       title: "Advisory & Consultancy",
       body: "We provide expert guidance to project developers and landowners, ensuring a seamless development and certification process.",
       backgroundColor: "rgb(12 12 14/var(--tw-bg-opacity))",
-      image: "/images/bento/icon_1.jpeg",
-      imageAlt: "picture of data security",
+      image: "/images/bento/advisory-and-consultancy.jpg",
+      imageAlt: "image of Advisory & Consultancy",
       size: 3,
     },
     {
@@ -81,8 +83,8 @@ const BentoCards: React.FC = () => {
       title: "Feasibility Assessments & Project Design",
       body: "We provide expert guidance to project developers and landowners, ensuring a seamless development and certification process. ",
       backgroundColor: "rgb(12 12 14/var(--tw-bg-opacity))",
-      image: "/images/bento/icon_2.jpeg",
-      imageAlt: "Image of python",
+      image: "/images/bento/feasibility-assessments.jpg",
+      imageAlt: "Image of Feasibility Assessments & Project Design",
       size: 3,
     },
     {
@@ -90,9 +92,8 @@ const BentoCards: React.FC = () => {
       number: "03",
       title: "Digital MRV & Credit-quality Simulation",
       body: "Leveraging state-of-the-art technology, we deliver precise monitoring and maintain high standards in credit quality.",
-      image: "/images/bento/icon_3.jpeg",
-      // video: "/videos/infinity.mp4",
-      posterImage: "/images/infinity.png",
+      image: "/images/bento/digital-MRV.jpg",
+      imageAlt: "Image of Digital MRV & Credit-quality Simulation",
       size: 6,
     },
     {
@@ -102,8 +103,8 @@ const BentoCards: React.FC = () => {
       body: "Through accurate environmental and climate modeling, we identify potential risks and opportunities, enhancing project resilience.",
       backgroundColor: "rgb(12 12 14/var(--tw-bg-opacity))",
       size: 6,
-      image: "/images/bento/icon_4.jpeg",
-      posterImage: "/images/cloud.png",
+      image: "/images/bento/environmental-climate-modelling.jpg",
+      imageAlt: 'image of Environmental & Climate Modelling'
     },
     {
       id: "card-5",
@@ -111,8 +112,8 @@ const BentoCards: React.FC = () => {
       title: "Biodiversity Monitoring",
       body: "We track and monitor biodiversity, promoting conservation and identifying potential co-benefits.",
       backgroundColor: "rgb(12 12 14/var(--tw-bg-opacity))",
-      image: "/images/bento/icon_5.jpeg",
-      imageAlt: "Image of stack",
+      image: "/images/bento/biodiversity-monitoring.jpg",
+      imageAlt: "Image of bio-diversity monitoring",
       size: 3,
     },
     {
@@ -120,9 +121,9 @@ const BentoCards: React.FC = () => {
       number: "06",
       title: "Regulatory Compliance",
       body: "We support corporate net-zero initiatives by facilitating accurate and comprehensive environmental reporting.",
-      backgroundColor: "rgb(12 12 14/var(--tw-bg-opacity))",
-      video: "/videos/cloud.mp4",
-      imageAlt: "Image of status",
+      backgroundColor: "gray",
+      // video: "/videos/cloud.mp4",
+      // posterImage: "/images/bento/cloud.png",
       size: 3,
     },
   ];
@@ -141,8 +142,8 @@ const BentoCards: React.FC = () => {
             body={card.body}
             image={card?.image}
             imageAlt={card?.imageAlt}
-            video={card?.video}
-            posterImage={card?.posterImage}
+            // video={card?.video}
+            // posterImage={card?.posterImage}
             size={card.size}
             backgroundColor={card.backgroundColor}
           />

@@ -27,11 +27,10 @@ export default function Home() {
         <title>Darukaa Earth | Home</title>
       </Head>
       <Navbar />
-      <HeroSequence />
       <main className={cn(s["home"])}>
         <div>
           {/* Hero Section */}
-          {/* <section className={cn(s["home__hero"], "container")} id="hero">
+          <section className={cn(s["home__hero"], "container")} id="hero">
             <video
               autoPlay
               muted
@@ -48,7 +47,29 @@ export default function Home() {
               </h1>
               <p>Innovating Carbon & Biodiversity Solutions</p>
             </div>
-          </section> */}
+          </section>
+
+          <section className="pt-10 container" id="solutions">
+            <BentoCards />
+          </section>
+
+          <section id="approach">
+            <LottieAnimation />
+          </section>
+
+          {/* Our Unmatched Edge */}
+          <section
+            className={cn(s["home__services"], "pt-10 container")}
+            id="strengths"
+          >
+            <StackCards />
+          </section>
+
+          <HeroSequence />
+
+          <section className="pt-10">
+            <Slider />
+          </section>
 
           {/* Introduction */}
           {/* <section
@@ -109,25 +130,8 @@ export default function Home() {
             </div>
           </section> */}
 
-          <section className="pt-10">
-            <Slider />
-          </section>
           {/* <HorizontalSlider /> */}
 
-          <section className="pt-10 container" id="solutions">
-            <BentoCards />
-          </section>
-          <section id="approach">
-            <LottieAnimation />
-          </section>
-
-          {/* Services | How we do it */}
-          <section
-            className={cn(s["home__services"], "pt-10 container")}
-            id="strengths"
-          >
-            <StackCards />
-          </section>
           <section className="mt-10" id="collaborations">
             <h1 className="text-h1-md-max md:text-h1 container text-neutral-600">
               Collaborations
@@ -168,9 +172,14 @@ export default function Home() {
         </section> */}
 
           {/* Contact us */}
-          <section className="container mt-10 rounded-20 overflow-hidden" id="contact">
+          <section
+            className="container mt-10 rounded-20 overflow-hidden"
+            id="contact"
+          >
             <div className={cn(s["home__contact-us"])}>
-              <h1 className="text-h1-md-max md:text-h1 text-neutral-600">Contact us</h1>
+              <h1 className="text-h1-md-max md:text-h1 text-neutral-600">
+                Contact us
+              </h1>
               <p className="mt-4 md:mt-8 text-base md:text-xl">
                 Contact us at:{" "}
                 <a href="mailto:info@Darukaa.com">

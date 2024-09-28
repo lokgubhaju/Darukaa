@@ -20,7 +20,7 @@ function App() {
         perPage: 6,
         autoScroll: {
           rewind: false,
-          speed: 1.5,
+          speed: 1,
         },
       }}
       extensions={{ AutoScroll }}
@@ -75,8 +75,32 @@ function App() {
         <Image
           src="/images/partners/digital-india.png"
           alt="Image 2"
+          width={150}
+          height={100}
+        />
+      </SplideSlide>
+      <SplideSlide className={cn(s["marquee-slide"])}>
+        <Image
+          src="/images/partners/airminers.png"
+          alt="Image 2"
+          width={150}
+          height={100}
+        />
+      </SplideSlide>
+      <SplideSlide className={cn(s["marquee-slide"])}>
+        <Image
+          src="/images/partners/brainforest.png"
+          alt="Image 2"
+          width={150}
+          height={100}
+        />
+      </SplideSlide>
+      <SplideSlide className={cn(s["marquee-slide"])}>
+        <Image
+          src="/images/partners/saiard.png"
+          alt="Image 2"
           width={100}
-          height={50}
+          height={100}
         />
       </SplideSlide>
     </Splide>
