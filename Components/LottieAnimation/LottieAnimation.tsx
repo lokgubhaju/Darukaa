@@ -10,7 +10,7 @@ const imageSequence = [
   ...Array.from(
     { length: 358 },
     (_, index) =>
-      `/images/lottie-frames/test/lottie_frame_${index
+      `/images/lottie-frames/lottie_frame_${index
         .toString()
         .padStart(3, "0")}.png`
   ),

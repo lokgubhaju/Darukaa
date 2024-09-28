@@ -8,14 +8,14 @@ const lottieJson = require('./Final_JSON.json'); // Your Lottie file
     const page = await browser.newPage();
 
     // Define the animation size based on the original Lottie animation data
-    const animationWidth = lottieJson.w || 1200; // Replace with correct width from your JSON
-    const animationHeight = lottieJson.h || 1200; // Replace with correct height from your JSON
+    const animationWidth = lottieJson.w || 1500; // Replace with correct width from your JSON
+    const animationHeight = lottieJson.h || 1500; // Replace with correct height from your JSON
 
     // Set viewport with high DPI (deviceScaleFactor for high quality)
     await page.setViewport({
         width: animationWidth,
         height: animationHeight,
-        deviceScaleFactor: 3 // Increase for higher pixel density (2x, 3x for retina-like)
+        deviceScaleFactor: 4 // Increase for higher pixel density (2x, 3x for retina-like)
     });
 
     // Load page content with Lottie animation
