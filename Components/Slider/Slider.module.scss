@@ -2,4 +2,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  &__text{
+    @apply absolute bottom-0 md:bottom-10 z-10 max-w-full md:max-w-[70%] mx-auto text-justify bg-gray text-black p-4 rounded-xl text-[8px] md:text-xl left-0 right-0;
+  }
 }

@@ -32,7 +32,7 @@ function Slider() {
       extensions={{ AutoScroll }}
     >
       <SplideSlide className="flex items-center rounded-20 overflow-hidden">
-        <p className="absolute bottom-0 md:bottom-10 z-1 max-w-full md:max-w-[70%] mx-auto text-justify bg-gray text-black p-4 rounded-xl text-[8px] md:text-xl left-0 right-0">
+        <p className={cn(s["slider-container__text"])}>
           The name "Darukaa" carries deep connections to nature and service in
           Hindu mythology. As the devoted charioteer of Lord Krishna, Darukaa
           represents steadfast dedication and guidance, values we hold dear in
@@ -51,7 +51,7 @@ function Slider() {
         </video>
       </SplideSlide>
       <SplideSlide className="flex items-center rounded-20 overflow-hidden">
-        <p className="absolute bottom-0 md:bottom-10 z-1 max-w-full md:max-w-[70%] mx-auto text-justify bg-gray text-black p-4 rounded-xl text-[8px] md:text-xl left-0 right-0">
+        <p className={cn(s["slider-container__text"])}>
           Our mission is to drive radical transparency in nature-based finance,
           fostering a sustainable future while empowering local communities to
           take charge of climate and biodiversity solutions.
