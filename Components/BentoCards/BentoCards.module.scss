@@ -44,6 +44,10 @@
         }
 
       }
+      &__image{
+        @apply absolute left-0 top-0 object-cover;
+        height: 100% !important;
+      }
 
       &__video{
         @apply w-full h-full object-cover left-0 top-0 absolute;

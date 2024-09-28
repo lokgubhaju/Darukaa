@@ -45,7 +45,7 @@ const BentoCard: React.FC<BentoCardProps> = ({
         height={100}
         layout="responsive"
         alt={imageAlt ? imageAlt : ""}
-        className="absolute left-0 top-0 object-cover !h-full"
+        className={cn(s["bento-cards__lists--card__image"])}
       />
     )}
     {video && (
