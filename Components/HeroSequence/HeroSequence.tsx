@@ -121,7 +121,6 @@ const HeroSequence = () => {
           id: "heroSequence",
         }
       );
-      ScrollTrigger.refresh();
     })  
 
     // Initial frame render
