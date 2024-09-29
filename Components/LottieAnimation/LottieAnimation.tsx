@@ -112,7 +112,7 @@ const LottieAnimation = () => {
             start: "top 80vh",
             end: "bottom 20vh",
             scrub: true,
-            markers: true,
+            markers: false,
             toggleActions: "play none none reverse",
           },
         }

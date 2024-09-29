@@ -1,21 +1,22 @@
 .bento-cards {
   background-color: rgb(44, 40, 40);
+
   &__lists {
     @apply flex flex-wrap gap-6 mt-10 justify-center;
 
     &--card {
-      @apply p-4 rounded-lg shadow-lg; /* Example styles; adjust as needed */
+      @apply rounded-lg shadow-lg cursor-pointer;
       border-radius: 8px;
       overflow: hidden;
-      padding: 1rem;
       position: relative;
       height: 420px;
       flex: 1 1 300px;
+      perspective: 1000px; /* Enables 3D perspective */
+      transition: transform 0.6s; /* Animation for flipping */
+      transform-style: preserve-3d;
 
       &-3 {
         width: 50%;
-        @screen md {
-        }
       }
       &-6 {
         @screen md {
@@ -23,35 +24,89 @@
         }
       }
 
-      &__text{
+      &__text {
         position: relative;
-        height: fit-content;
+        width: 100%;
+        min-height: 150px;
         backdrop-filter: blur(10px);
-        padding: 8px;
-        z-index: 1;
+        padding: 1rem;
+        z-index: 2;
         border-radius: 8px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.4);
         overflow: hidden;
         &-title,
         &-body {
-          @apply relative z-10;
+          @apply relative z-10 w-[90%];
         }
         &-title {
           @apply font-bold text-lg mb-2;
         }
-  
+
         &-body {
           @apply text-base mb-2;
         }
-
       }
-      &__image{
+
+      &__image {
         @apply absolute left-0 top-0 object-cover;
         height: 100% !important;
       }
 
-      &__video{
+      &__video {
         @apply w-full h-full object-cover left-0 top-0 absolute;
       }
+
+      &__back-body {
+        position: relative; /* Change to relative to be within the back side */
+        padding: 1rem;
+        opacity: 1; /* Set opacity to 1 to make it visible */
+        color: white; /* Add text color */
+        transform: none; /* Ensure no unwanted transformations */
+      }
+
+      &.flipped .bento-card__inner {
+        transform: rotateY(180deg);
+      }
+
+      .bento-card__inner {
+        @apply w-full h-full;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease-in-out;
+      }
+
+      .bento-card__front,
+      .bento-card__back {
+        @apply absolute w-full h-full;
+        backface-visibility: hidden;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      .bento-card__back {
+        transform: rotateY(180deg);
+        align-items: center;
+        width: 100%;
+        @apply left-0 right-0 m-auto;
+      }
     }
+  }
+  &__front--icon,
+  &__back--icon {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

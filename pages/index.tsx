@@ -67,7 +67,7 @@ export default function Home() {
 
           <HeroSequence />
 
-          <section className="pt-10">
+          <section className="pt-10 relative">
             <Slider />
           </section>
 
