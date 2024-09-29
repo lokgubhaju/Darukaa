@@ -76,6 +76,12 @@ const HeroSequence = () => {
     loadImages();
   }, [frameCount]);
 
+  const refreshScrollTrigger = () => {
+    requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
+  };
+
   useEffect(() => {
     if (!imagesLoaded) return;
 
@@ -99,22 +105,25 @@ const HeroSequence = () => {
     };
 
     // ScrollTrigger for canvas pinning and image sequence animation
-    gsap.to(
-      {},
-      {
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: `+=${window.innerHeight * frameCount * 0.01}`,
-          scrub: true,
-          pin: true,
-          markers: false,
-          pinSpacing: true,
-          onUpdate: (self) => updateImage(self.progress),
-        },
-        id: "heroSequence",
-      }
-    );
+    requestAnimationFrame(() => {
+      gsap.to(
+        {},
+        {
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top",
+            end: `+=${window.innerHeight * frameCount * 0.01}`,
+            scrub: true,
+            pin: true,
+            markers: false,
+            pinSpacing: true,
+            onUpdate: (self) => updateImage(self.progress),
+          },
+          id: "heroSequence",
+        }
+      );
+      ScrollTrigger.refresh();
+    })  
 
     // Initial frame render
     renderFrame(0);
