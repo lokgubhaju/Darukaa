@@ -43,7 +43,7 @@ function Slider() {
           loop
           playsInline
           poster="/images/slider/slider_1.jpg"
-          className="object-cover"
+          className="object-cover h-full w-full"
         >
           <source src="/images/slider/slider_1.mp4" type="video/mp4" />
         </video>
