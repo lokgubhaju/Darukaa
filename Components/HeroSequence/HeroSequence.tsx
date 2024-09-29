@@ -129,7 +129,8 @@ const HeroSequence = () => {
           scrollTrigger: {
             trigger: textPanel,
             start: "top 75%",
-            end: "top 50%",
+            end: "bottom 20vh",
+            markers: true,
             scrub: true,
             toggleActions: "play none none reverse",
           },
