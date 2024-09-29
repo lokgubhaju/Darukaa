@@ -39,17 +39,21 @@
     // flex-direction:column;
     color: black;
     position: absolute;
+    top: 50%;
     @screen md{
+      top: 20%;
       margin-left: 4rem;
 
     }
-    top: 20%;
     &__text-panel {
       backdrop-filter: blur(10px);
       border-radius: 8px;
       padding: 20px;
       margin: 20% 0;
-      width: 50%;
+      width: 100%;
+      @screen md{
+        width: 50%;
+      }
       text-align: left;
       &__headline {
         font-size: 36px;
