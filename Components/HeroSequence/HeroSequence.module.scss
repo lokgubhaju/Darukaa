@@ -25,7 +25,7 @@
     // flex-direction:column;
     color: white;
     position: absolute;
-    top: 20vh;
+    top: 10vh;
     @apply px-3;
     @screen md {
       margin-left: 6rem;
@@ -34,9 +34,9 @@
       backdrop-filter: blur(10px);
       border-radius: 8px;
       padding: 20px;
-      margin: 10vh 0;
+      margin: 7vh 0;
       text-align: left;
-      font-size: clamp(0.875rem, 1.505vw + 0.546rem, 1.75rem);
+      font-size: clamp(0.5rem, 1.2vw + 0.546rem, 1.5rem);
       line-height: clamp(1.313rem, 1.656vw + 0.95rem, 2.275rem);
       @screen md {
         width: 50%;
