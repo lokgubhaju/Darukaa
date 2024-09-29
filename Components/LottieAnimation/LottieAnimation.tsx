@@ -106,10 +106,11 @@ const LottieAnimation = () => {
         {
           opacity: 1,
           y: 0,
+          delay: index * 0.2,
           scrollTrigger: {
             trigger: textPanel,
             start: "top 20%",
-            end: "bottom bottom",
+            end: "bottom top",
             scrub: true,
             markers: true,
             toggleActions: "play none none reverse",
