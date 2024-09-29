@@ -43,7 +43,8 @@ const BentoCard: React.FC<BentoCardProps> = ({
       )}
       key={id}
       style={{ backgroundColor }}
-      onClick={handleFlip}
+      onMouseEnter={handleFlip}
+      onMouseLeave={handleFlip}
     >
       <div className={s["bento-card__inner"]}>
         {/* Front side */}

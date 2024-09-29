@@ -34,11 +34,8 @@ function Slider() {
     >
       <SplideSlide className="flex items-center rounded-20 overflow-hidden h-full">
         <p className={cn(s["slider-container__text"])}>
-          The name "Darukaa" carries deep connections to nature and service in
-          Hindu mythology. As the devoted charioteer of Lord Krishna, Darukaa
-          represents steadfast dedication and guidance, values we hold dear in
-          our work. In Sanskrit, "Darukaa" also means "tree" or is associated
-          with forests, symbolizing life, growth, and the natural world.
+        In Hindu mythology, Darukaa [Pronounced /De-ru-ka] is Lord Krishna&rsquo;s skilled charioteer in the Mahabharata. 
+        The name also signifies &#8217;Daruka-vana,&rsquo; a sacred forest (in Sanskrit) mentioned in the Shiv Purana, later known as Dwarka—Lord Krishna&rsquo;s home.Our name Darukaa.Earth - is drawn from this rich symbolism; signifying our mission to serve as a conduit for a thriving, sustainable & greener world.
         </p>
         <video
           autoPlay
