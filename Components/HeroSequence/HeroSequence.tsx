@@ -76,10 +76,11 @@ const HeroSequence = () => {
     loadImages();
   }, [frameCount]);
 
+  // Update ScrollTrigger after a slight delay to ensure layout is stable
   const refreshScrollTrigger = () => {
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       ScrollTrigger.refresh();
-    });
+    }, 100); // Delay ensures layout is stable
   };
 
   useEffect(() => {
@@ -121,40 +122,48 @@ const HeroSequence = () => {
           id: "heroSequence",
         }
       );
-    })  
+    });
 
     // Initial frame render
     renderFrame(0);
 
-    textPanelRefs.current.forEach((textPanel, index) => {
-      gsap.fromTo(
-        textPanel,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 10,
-          scrollTrigger: {
-            trigger: textPanel,
-            start: "top 50%",
-            end: "bottom 30vh",
-            markers: false,
-            scrub: true,
-            toggleActions: "play none none reverse",
-          },
-          duration: 1,
+    // Register ScrollTrigger for text panels
+    requestAnimationFrame(() => {
+      textPanelRefs.current.forEach((textPanel, index) => {
+        if (textPanel) {
+          gsap.fromTo(
+            textPanel,
+            { opacity: 0, y: 50 },
+            {
+              opacity: 1,
+              y: 10,
+              scrollTrigger: {
+                trigger: textPanel,
+                start: "top 50%",
+                end: "bottom 30vh",
+                markers: false,
+                scrub: true,
+                toggleActions: "play none none reverse",
+              },
+              duration: 1,
+            }
+          );
         }
-      );
+      });
+      // Refresh ScrollTrigger after registering the text panels
+      refreshScrollTrigger();
     });
 
     // Handle browser resize
     window.addEventListener("resize", updateCanvasSize);
 
-    // Refresh ScrollTrigger calculations after layout changes
-    ScrollTrigger.refresh();
+    // Ensure that ScrollTrigger is refreshed after all content is loaded
+    window.addEventListener("load", refreshScrollTrigger);
 
     // Clean up on unmount
     return () => {
       window.removeEventListener("resize", updateCanvasSize);
+      window.removeEventListener("load", refreshScrollTrigger);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, [frameCount, imagesLoaded]);
