@@ -40,8 +40,14 @@
   }
 
   &__contact-us {
-    height: 30vh;
     background-color: #fffaf2;
-    @apply p-3 md:p-5 text-black;
+    height: 30vh;
+    @apply h-full md:h-1/2 p-3 md:p-12 text-black flex flex-col md:flex-row items-start md:justify-between md:items-center gap-4;
+    div{
+      width: 100%;
+    }
+    iframe{
+      width: 100%
+    }
   }
 }

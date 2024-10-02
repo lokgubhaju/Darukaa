@@ -67,9 +67,9 @@ export default function Home() {
 
           <HeroSequence />
 
-          <section className="pt-10 relative">
+          {/* <section className="pt-10 relative">
             <Slider />
-          </section>
+          </section> */}
 
           {/* Introduction */}
           {/* <section
@@ -147,11 +147,6 @@ export default function Home() {
             <TextwithMedia />
           </section> */}
 
-          {/* Why it matters */}
-          {/* <section className={cn(s["home__why-it-matters"], "mt-10 container")}>
-            <GalleryCards />
-          </section> */}
-
           {/* Contact */}
 
           {/* About us section */}
@@ -171,22 +166,46 @@ export default function Home() {
           </iframe>
         </section> */}
 
+          <section className={cn(s["home__why-it-matters"], "mt-10 container")}>
+            <GalleryCards />
+          </section>
+
           {/* Contact us */}
           <section
             className="container mt-10 rounded-20 overflow-hidden"
             id="contact"
           >
             <div className={cn(s["home__contact-us"])}>
-              <h1 className="text-h1-md-max md:text-h1 text-neutral-600">
-                Contact us
-              </h1>
-              <p className="mt-4 md:mt-8 text-base md:text-xl">
-                Contact us at:{" "}
-                <a href="mailto:info@Darukaa.com">
-                  <FontAwesomeIcon icon={faEnvelope} size="1x" />{" "}
-                  info@Darukaa.com
-                </a>
-              </p>
+              <div className={cn(s["home__contact-us__container"])}>
+                <h1 className="text-h1-md-max md:text-h1 text-neutral-600">
+                  Contact us
+                </h1>
+                <p className="mt-4 md:mt-8 text-base md:text-xl">
+                  <a href="mailto:info@Darukaa.com">
+                    <FontAwesomeIcon icon={faEnvelope} size="1x" />{" "}
+                    info@Darukaa.com
+                  </a>
+                </p>
+                <p className="mt-2 md:mt-4 text-base md:text-xl">
+                  <a
+                    href="https://www.linkedin.com/company/darukaa-esg-tech/"
+                    target="_blank"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} size="1x" /> LinkedIn
+                  </a>
+                </p>
+              </div>
+              <div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.5319218476207!2d72.88528157611954!3d19.128179782087095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8033a47733f%3A0x5f48e5d80b45cfce!2sDarukaa.Earth!5e0!3m2!1sen!2sde!4v1727888904029!5m2!1sen!2sde"
+                  width="500"
+                  height="250"
+                  style={{border:0}}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </section>
 

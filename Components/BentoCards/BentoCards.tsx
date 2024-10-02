@@ -8,7 +8,7 @@ import CloseIcon from "../CloseIcon";
 interface BentoCardProps {
   id: string;
   title: string;
-  body: string;
+  body?: string;
   backBody?: string;
   backgroundColor?: string;
   image?: string;
@@ -112,9 +112,9 @@ const BentoCards: React.FC = () => {
       id: "card-1",
       number: "01",
       title: "Advisory & Consultancy",
-      body: "Expert guidance to project developers and investors, ensuring alignment with global standards and long-term success.",
-      backBody:
-        "We provide specialized guidance to both project developers and investors, ensuring they navigate the complexities of carbon and biodiversity projects with precision. Our services include advising on the selection of the most appropriate methodologies for nature based projects, and the development of biodiversity credits. We also offer strategic insights into optimizing project timelines, risk management, and stakeholder engagement, ensuring long-term project success. Our tailored consultancy ensures that investments are aligned with international best practices and contribute meaningfully to global climate and biodiversity targets.",
+      backBody: "Expert guidance to project developers and investors, ensuring alignment with global standards and long-term success.",
+      // backBody:
+      //   "We provide specialized guidance to both project developers and investors, ensuring they navigate the complexities of carbon and biodiversity projects with precision. Our services include advising on the selection of the most appropriate methodologies for nature based projects, and the development of biodiversity credits. We also offer strategic insights into optimizing project timelines, risk management, and stakeholder engagement, ensuring long-term project success. Our tailored consultancy ensures that investments are aligned with international best practices and contribute meaningfully to global climate and biodiversity targets.",
       backgroundColor: "gray",
       image: "/images/bento/advisory-and-consultancy.jpg",
       imageAlt: "image of Advisory & Consultancy",
@@ -124,9 +124,9 @@ const BentoCards: React.FC = () => {
       id: "card-2",
       number: "02",
       title: "Feasibility Assessments & Project Design",
-      body: "Using spatial data to assess project viability and create detailed design documents for certification.",
-      backBody:
-        "Leveraging advanced spatial analysis and remote sensing, we conduct comprehensive feasibility assessments to determine the viability of carbon and biodiversity projects. Our assessments include detailed land-use analysis, carbon stock estimation, and habitat suitability modelling. We also create Project Design Documents (PDDs) tailored to meet the stringent requirements of leading carbon standards. Our expertise ensures that projects are scientifically robust, scalable, and ready for certification and credit issuance.",
+      backBody: "Using spatial data to assess project viability and create detailed design documents for certification.",
+      // backBody:
+      //   "Leveraging advanced spatial analysis and remote sensing, we conduct comprehensive feasibility assessments to determine the viability of carbon and biodiversity projects. Our assessments include detailed land-use analysis, carbon stock estimation, and habitat suitability modelling. We also create Project Design Documents (PDDs) tailored to meet the stringent requirements of leading carbon standards. Our expertise ensures that projects are scientifically robust, scalable, and ready for certification and credit issuance.",
       backgroundColor: "gray",
       image: "/images/bento/feasibility-assessments.jpg",
       imageAlt: "Image of Feasibility Assessments & Project Design",
@@ -136,9 +136,9 @@ const BentoCards: React.FC = () => {
       id: "card-3",
       number: "03",
       title: "Digital MRV & Credit-quality Simulation",
-      body: "Real-time monitoring and predictive simulations to ensure high-quality credits.",
-      backBody:
-        "We utilize advanced digital tools for MRV, integrating satellite imagery, UAV data, and IoT sensors to provide real-time, high-resolution data on carbon sequestration, deforestation, and biodiversity metrics. Our AI-driven simulations predict credit yields and environmental impacts, while our holistic dashboard offers transparent, real-time insights for credible reporting and sustainable outcomes.",
+      backBody: "Real-time monitoring and predictive simulations to ensure high-quality credits.",
+      // backBody:
+      //   "We utilize advanced digital tools for MRV, integrating satellite imagery, UAV data, and IoT sensors to provide real-time, high-resolution data on carbon sequestration, deforestation, and biodiversity metrics. Our AI-driven simulations predict credit yields and environmental impacts, while our holistic dashboard offers transparent, real-time insights for credible reporting and sustainable outcomes.",
       image: "/images/bento/digital-MRV.jpg",
       imageAlt: "Image of Digital MRV & Credit-quality Simulation",
       size: 6,
@@ -148,9 +148,9 @@ const BentoCards: React.FC = () => {
       id: "card-4",
       number: "04",
       title: "Environmental & Climate Modelling",
-      body: "Advanced models to predict ecosystem changes and guide climate mitigation strategies.",
-      backBody:
-        "Our environmental and climate modelling services utilize state-of-the-art tools such as General Circulation Models (GCMs) to provide precise predictions on ecosystem changes, carbon flux, and climate impacts. These models help in assessing risks, guiding mitigation strategies, and planning adaptive measures for both carbon projects and biodiversity conservation efforts. Our data-driven insights are vital for long-term environmental sustainability.",
+      backBody: "Advanced models to predict ecosystem changes and guide climate mitigation strategies.",
+      // backBody:
+      //   "Our environmental and climate modelling services utilize state-of-the-art tools such as General Circulation Models (GCMs) to provide precise predictions on ecosystem changes, carbon flux, and climate impacts. These models help in assessing risks, guiding mitigation strategies, and planning adaptive measures for both carbon projects and biodiversity conservation efforts. Our data-driven insights are vital for long-term environmental sustainability.",
       backgroundColor: "gray",
       size: 6,
       image: "/images/bento/environmental-climate-modelling.jpg",
@@ -160,9 +160,9 @@ const BentoCards: React.FC = () => {
       id: "card-5",
       number: "05",
       title: "Biodiversity Monitoring",
-      body: "AI-driven tools to track species and habitats, supporting conservation and biodiversity credit initiatives.",
-      backBody:
-        "AI-driven tools to track species and habitats, supporting conservation and biodiversity credit initiatives.",
+      backBody: "AI-driven tools to track species and habitats, supporting conservation and biodiversity credit initiatives.",
+      // backBody:
+      //   "AI-driven tools to track species and habitats, supporting conservation and biodiversity credit initiatives.",
       backgroundColor: "gray",
       image: "/images/bento/biodiversity-monitoring.jpg",
       imageAlt: "Image of bio-diversity monitoring",
@@ -172,10 +172,12 @@ const BentoCards: React.FC = () => {
       id: "card-6",
       number: "06",
       title: "Regulatory Compliance",
-      body: "Reporting for environmental and legal standards.",
-      backBody:
-        "We assist in navigating complex regulatory landscapes, ensuring that your projects meet all necessary environmental and legal standards such as TNFD, CSRD,etc. Our compliance services safeguard your operations, allowing you to focus on making a positive impact. We also assist corporates with data for their environmental reporting.",
+      backBody: "Reporting for environmental and legal standards.",
+      // backBody:
+      //   "We assist in navigating complex regulatory landscapes, ensuring that your projects meet all necessary environmental and legal standards such as TNFD, CSRD,etc. Our compliance services safeguard your operations, allowing you to focus on making a positive impact. We also assist corporates with data for their environmental reporting.",
       backgroundColor: "gray",
+      image: "/images/bento/regulatory-compliance.jpg",
+      imageAlt: "Image of regulatory compliance",
       // video: "/videos/cloud.mp4",
       // posterImage: "/images/bento/cloud.png",
       size: 3,
@@ -184,7 +186,7 @@ const BentoCards: React.FC = () => {
 
   return (
     <main className={(s["bento-cards"], "container")}>
-      <h1 className="text-center text-h1-md-max md:text-h1 text-neutral-600">
+      <h1 className="text-h1-md-max md:text-h1 text-neutral-600">
         Our Impact-Driven Solutions
       </h1>
       <div className={cn(s["bento-cards__lists"])}>
@@ -193,7 +195,7 @@ const BentoCards: React.FC = () => {
             key={card.id}
             id={card.id}
             title={card.title}
-            body={card.body}
+            // body={card.body}
             backBody={card.backBody}
             image={card.image}
             imageAlt={card.imageAlt}

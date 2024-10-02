@@ -1,5 +1,5 @@
 .gallery {
-  @apply p-4 md:p-8 bg-white rounded-20;
+  // @apply p-4 md:p-8 bg-white rounded-20;
   // background-image: url("/images/about-us.png");
   // background-size: cover;
   // background-position: center;
@@ -7,14 +7,25 @@
     @apply flex flex-col md:flex-row;
     gap: 2em;
     &__card {
+      @apply rounded-20 overflow-hidden;
       flex: 1;
+      &--asset{
+        position: relative;
+        &--headline{
+          @apply text-white mt-4 p-4;
+          backdrop-filter: blur(20px);
+          font-size: 16px;
+          line-height: 150%;
+          position: absolute;
+          bottom: 0;
+          @screen md{
+            font-size: 22px;
+          }
+        }
+      }
       @screen md-max {
         flex: 1;
         min-width: 100%;
-      }
-      &--headline,
-      &--subheadline {
-        @apply text-center text-green-500;
       }
       &--subheadline {
         margin-bottom: 12px;
@@ -22,15 +33,19 @@
           margin-bottom: 20px;
         }
       }
-      list-style: none;
-      &--list {
-        @apply text-green-800 text-left;
-        display: flex;
-        &::before {
-          content:'-';
-          margin-right: 8px;
-        }
+      img, video{
+        aspect-ratio: 1/1;
+        object-fit: cover;
       }
+      // list-style: none;
+      // &--list {
+      //   @apply text-green-800 text-left;
+      //   display: flex;
+      //   &::before {
+      //     content:'-';
+      //     margin-right: 8px;
+      //   }
+      // }
     }
   }
 }

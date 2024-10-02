@@ -106,39 +106,48 @@ const HeroSequence = () => {
     };
 
     // ScrollTrigger for canvas pinning and image sequence animation
-    requestAnimationFrame(() => {
-      gsap.to(
-        {},
-        {
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-            end: `+=${window.innerHeight * 2}`,
-            scrub: true,
-            pin: true,
-            markers: false,
-            onUpdate: (self) => updateImage(self.progress),
-          },
-          id: "heroSequence",
-        }
-      );
-    });
+
+      // gsap.to(
+      //   {},
+      //   {
+      //     scrollTrigger: {
+      //       trigger: containerRef.current,
+      //       start: "top top",
+      //       end: `+=${window.innerHeight * 2}`,
+      //       scrub: true,
+      //       pin: true,
+      //       markers: false,
+      //       onUpdate: (self) => updateImage(self.progress),
+      //     },
+      //     id: "heroSequence",
+      //   }
+      // );
+      const timelin1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: `+=${window.innerHeight * 2}`,
+          scrub: true,
+          pin: true,
+          markers: false,
+          onUpdate: (self) => updateImage(self.progress),
+        },
+      })
 
     // Initial frame render
     renderFrame(0);
 
     // Register ScrollTrigger for text panels
-    requestAnimationFrame(() => {
       textPanelRefs.current.forEach((textPanel, index) => {
         if (textPanel) {
-          gsap.fromTo(
+          timelin1.fromTo(
             textPanel,
             { opacity: 0, y: 50 },
             {
               opacity: 1,
               y: 10,
               scrollTrigger: {
-                trigger: textPanel,
+                trigger: containerRef.current,
                 start: "top 50%",
                 end: "bottom 30vh",
                 markers: false,
@@ -151,8 +160,7 @@ const HeroSequence = () => {
         }
       });
       // Refresh ScrollTrigger after registering the text panels
-      refreshScrollTrigger();
-    });
+      // refreshScrollTrigger();
 
     // Handle browser resize
     window.addEventListener("resize", updateCanvasSize);

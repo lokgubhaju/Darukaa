@@ -32,8 +32,8 @@ const config: Config = {
       },
       fontSize: {
         pretitle: "20px",
-        h1: "54px",
-        "h1-md-max": "36px",
+        h1: "40px",
+        "h1-md-max": "32px",
         "body-copy": "20px",
         "body-copy-md-max": "16px",
       },

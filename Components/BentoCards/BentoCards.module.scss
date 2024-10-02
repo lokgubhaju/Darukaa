@@ -27,20 +27,21 @@
       &__text {
         position: relative;
         width: 100%;
-        min-height: 150px;
+        height: 100%;
         backdrop-filter: blur(10px);
         padding: 1rem;
         z-index: 2;
         border-radius: 8px;
         color: white;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.3);
         overflow: hidden;
         &-title,
         &-body {
           @apply relative z-10 w-[90%];
         }
         &-title {
-          @apply font-bold text-lg mb-2;
+          @apply mt-5 mb-2;
+          font-size: 30px;
         }
 
         &-body {
@@ -90,6 +91,7 @@
         align-items: center;
         width: 100%;
         @apply left-0 right-0 m-auto;
+        font-size: 24px;
       }
     }
   }

@@ -26,7 +26,7 @@ function App() {
       extensions={{ AutoScroll }}
     >
       <SplideSlide className={cn(s["marquee-slide"])}>
-        <a href="https://www.google.com/" target="_blank">
+        <a href="https://cma-india.in/" target="_blank">
           <Image
             src="/images/partners/CMAI.png"
             alt="Image 1"
@@ -36,7 +36,7 @@ function App() {
         </a>
       </SplideSlide>
       <SplideSlide className={cn(s["marquee-slide"])}>
-        <a href="https://www.google.com/" target="_blank">
+        <a href="https://heliware.co.in/" target="_blank">
           <Image
             src="/images/partners/Heliware.png"
             alt="Image 2"
@@ -46,7 +46,7 @@ function App() {
         </a>
       </SplideSlide>
       <SplideSlide className={cn(s["marquee-slide"])}>
-        <a href="#" target="_blank">
+        <a href="https://iigst.in/" target="_blank">
           <Image
             src="/images/partners/RSIGST.png"
             alt="Image 2"
@@ -56,52 +56,84 @@ function App() {
         </a>
       </SplideSlide>
       <SplideSlide className={cn(s["marquee-slide"])}>
-        <Image
-          src="/images/partners/startup-india.png"
-          alt="Image 1"
-          width={150}
-          height={100}
-        />
+        <a href="https://www.startupindia.gov.in/" target="_blank">
+          <Image
+            src="/images/partners/startup-india.png"
+            alt="Image 1"
+            width={150}
+            height={100}
+          />
+        </a>
       </SplideSlide>
       <SplideSlide className={cn(s["marquee-slide"])}>
-        <Image
-          src="/images/partners/make-in-india.png"
-          alt="Image 2"
-          width={100}
-          height={50}
-        />
+        <a href="https://www.makeinindia.com/" target="_blank">
+          <Image
+            src="/images/partners/make-in-india.png"
+            alt="Image 2"
+            width={150}
+            height={100}
+          />
+        </a>
       </SplideSlide>
       <SplideSlide className={cn(s["marquee-slide"])}>
-        <Image
-          src="/images/partners/digital-india.png"
-          alt="Image 2"
-          width={150}
-          height={100}
-        />
+        <a href="http://www.digitalindia.gov.in/" target="_blank">
+          <Image
+            src="/images/partners/digital-india.png"
+            alt="Image 2"
+            width={200}
+            height={150}
+          />
+        </a>
       </SplideSlide>
       <SplideSlide className={cn(s["marquee-slide"])}>
-        <Image
-          src="/images/partners/airminers.png"
-          alt="Image 2"
-          width={150}
-          height={100}
-        />
+        <a href="https://airminers.com/" target="_blank">
+          <Image
+            src="/images/partners/airminers.png"
+            alt="Image 2"
+            width={150}
+            height={100}
+          />
+        </a>
       </SplideSlide>
       <SplideSlide className={cn(s["marquee-slide"])}>
-        <Image
-          src="/images/partners/brainforest.png"
-          alt="Image 2"
-          width={150}
-          height={100}
-        />
+        <a href="https://brainforest.global/" target="_blank">
+          <Image
+            src="/images/partners/brainforest.png"
+            alt="Image 2"
+            width={150}
+            height={100}
+          />
+        </a>
       </SplideSlide>
       <SplideSlide className={cn(s["marquee-slide"])}>
-        <Image
-          src="/images/partners/saiard.png"
-          alt="Image 2"
-          width={100}
-          height={100}
-        />
+        <a href="https://saiard.co.in/" target="_blank">
+          <Image
+            src="/images/partners/saiard.png"
+            alt="Image 2"
+            width={100}
+            height={100}
+          />
+        </a>
+      </SplideSlide>
+      <SplideSlide className={cn(s["marquee-slide"])}>
+        <a href="https://safeinch.org/" target="_blank">
+          <Image
+            src="/images/partners/safe.png"
+            alt="Image 2"
+            width={200}
+            height={100}
+          />
+        </a>
+      </SplideSlide>
+      <SplideSlide className={cn(s["marquee-slide"])}>
+        <a href="https://climatebase.org/" target="blank">
+          <Image
+            src="/images/partners/climatebase.png"
+            alt="Image 2"
+            width={200}
+            height={100}
+          />
+        </a>
       </SplideSlide>
     </Splide>
   );
