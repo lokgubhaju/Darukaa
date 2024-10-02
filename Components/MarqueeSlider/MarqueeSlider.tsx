@@ -29,7 +29,7 @@ function App() {
         <a href="https://cma-india.in/" target="_blank">
           <Image
             src="/images/partners/CMAI.png"
-            alt="Image 1"
+            alt="Image of CMAI"
             width={100}
             height={50}
           />
@@ -39,7 +39,7 @@ function App() {
         <a href="https://heliware.co.in/" target="_blank">
           <Image
             src="/images/partners/Heliware.png"
-            alt="Image 2"
+            alt="Image of Heliware"
             width={200}
             height={100}
           />
@@ -49,7 +49,7 @@ function App() {
         <a href="https://iigst.in/" target="_blank">
           <Image
             src="/images/partners/RSIGST.png"
-            alt="Image 2"
+            alt="Image of RSIGST"
             width={100}
             height={50}
           />
@@ -59,7 +59,7 @@ function App() {
         <a href="https://www.startupindia.gov.in/" target="_blank">
           <Image
             src="/images/partners/startup-india.png"
-            alt="Image 1"
+            alt="Image of startup india"
             width={150}
             height={100}
           />
@@ -69,7 +69,7 @@ function App() {
         <a href="https://www.makeinindia.com/" target="_blank">
           <Image
             src="/images/partners/make-in-india.png"
-            alt="Image 2"
+            alt="Image of make in india"
             width={150}
             height={100}
           />
@@ -79,7 +79,7 @@ function App() {
         <a href="http://www.digitalindia.gov.in/" target="_blank">
           <Image
             src="/images/partners/digital-india.png"
-            alt="Image 2"
+            alt="Image of digital india"
             width={200}
             height={150}
           />
@@ -89,7 +89,7 @@ function App() {
         <a href="https://airminers.com/" target="_blank">
           <Image
             src="/images/partners/airminers.png"
-            alt="Image 2"
+            alt="Image of airminers"
             width={150}
             height={100}
           />
@@ -99,7 +99,7 @@ function App() {
         <a href="https://brainforest.global/" target="_blank">
           <Image
             src="/images/partners/brainforest.png"
-            alt="Image 2"
+            alt="Image of brainforest"
             width={150}
             height={100}
           />
@@ -109,7 +109,7 @@ function App() {
         <a href="https://saiard.co.in/" target="_blank">
           <Image
             src="/images/partners/saiard.png"
-            alt="Image 2"
+            alt="Image of Saiard"
             width={100}
             height={100}
           />
@@ -119,7 +119,7 @@ function App() {
         <a href="https://safeinch.org/" target="_blank">
           <Image
             src="/images/partners/safe.png"
-            alt="Image 2"
+            alt="Image of Safe"
             width={200}
             height={100}
           />
@@ -128,8 +128,8 @@ function App() {
       <SplideSlide className={cn(s["marquee-slide"])}>
         <a href="https://climatebase.org/" target="blank">
           <Image
-            src="/images/partners/climatebase.png"
-            alt="Image 2"
+            src="/images/partners/Climatebase.png"
+            alt="Image of Climatebase"
             width={200}
             height={100}
           />
