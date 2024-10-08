@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const imageSequence = [
   ...Array.from(
-    { length: 358 },
+    { length: 192 },
     (_, index) =>
       `/images/lottie-frames/lottie_frame_${index
         .toString()
@@ -57,12 +57,16 @@ const LottieAnimation = () => {
 
     const canvas = canvasRef.current;
     const context = canvas?.getContext("2d");
-    const screenWidth = window.innerWidth;
+    const screenWidth = document.documentElement.clientWidth;
     const screenHeight = window.innerHeight;
 
     if (canvas && context) {
       canvas.width = screenWidth;
       canvas.height = screenHeight;
+    }
+
+    if (containerRef.current) {
+      containerRef.current.style.width = `${screenWidth}px`; // Set container width to visible viewport
     }
 
     const renderFrame = (index: any) => {
@@ -73,7 +77,7 @@ const LottieAnimation = () => {
     };
 
     const updateImage = (progress: any) => {
-      const frameIndex = Math.min(frameCount - 1, Math.floor(progress * frameCount));
+      const frameIndex = Math.min(frameCount - 2, Math.floor(progress * frameCount));
       renderFrame(frameIndex);
     };
 
@@ -99,37 +103,85 @@ const LottieAnimation = () => {
     // Initial frame render
     renderFrame(0);
 
-    textPanelRefs.current.forEach((textPanel, index) => {
-      gsap.fromTo(
-        textPanel,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: textPanel,
-            start: "top 80vh",
-            end: "bottom 20vh",
-            scrub: true,
-            markers: false,
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
+    // textPanelRefs.current.forEach((textPanel, index) => {
+    //   gsap.fromTo(
+    //     textPanel,
+    //     { opacity: 0, y:0 },
+    //     {
+    //       opacity: 1,
+    //       y: 0,
+    //       delay: index * 0.2,
+    //       scrollTrigger: {
+    //         trigger: textPanel,
+    //         start: "top 80vh",
+    //         end: "bottom 10vh",
+    //         scrub: false,
+    //         markers: false,
+    //         toggleActions: "play none none reverse",
+    //       },
+    //     }
+    //   );
 
-      // Fade-out animation
-      // gsap.to(textPanel, {
-      //   opacity: 0,
-      //   scrollTrigger: {
-      //     trigger: textPanel,
-      //     start: "top 50%",  // Start fading out when the top of the element is 20% from the top of the viewport
-      //     end: "top 20%",     // End the fade-out when the top of the element reaches the top of the viewport
-      //     scrub: true,
-      //     toggleActions: "play none none reverse",
-      //   },
-      // });
-    });
+    //   // Fade-out animation
+    //   // gsap.to(textPanel, {
+    //   //   opacity: 0,
+    //   //   scrollTrigger: {
+    //   //     trigger: textPanel,
+    //   //     start: "top 50%",  // Start fading out when the top of the element is 20% from the top of the viewport
+    //   //     end: "top 20%",     // End the fade-out when the top of the element reaches the top of the viewport
+    //   //     scrub: true,
+    //   //     toggleActions: "play none none reverse",
+    //   //   },
+    //   // });
+    // });
+
+    let mm = gsap.matchMedia();
+
+mm.add("(max-width: 767px)", () => {
+  // Animation for screens with max width of 767px
+  textPanelRefs.current.forEach((textPanel, index) => {
+    gsap.fromTo(
+      textPanel,
+      { opacity: 0, y: 0 },
+      {
+        opacity: 1,
+        y: -300,
+        delay: index * 0,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 90vh",   // Different start for small screens
+          end: "bottom 20vh",  // Different end for small screens
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+});
+
+mm.add("(min-width: 768px)", () => {
+  // Animation for larger screens
+  textPanelRefs.current.forEach((textPanel, index) => {
+    gsap.fromTo(
+      textPanel,
+      { opacity: 0, y: 0 },
+      {
+        opacity: 1,
+        y: 0,
+        delay: index * 0.2,
+        scrollTrigger: {
+          trigger: textPanel,
+          start: "top 80vh",   // Start value for larger screens
+          end: "bottom 10vh",  // End value for larger screens
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+});
 
     // Add a load event listener to refresh ScrollTrigger once everything is fully loaded
     window.addEventListener("load", refreshScrollTrigger);

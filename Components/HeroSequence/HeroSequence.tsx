@@ -26,25 +26,31 @@ const HeroSequence = () => {
   const renderFrame = (index: number) => {
     const canvas = canvasRef.current;
     const context = canvas?.getContext("2d");
-    const screenWidth = window.innerWidth;
+    const screenWidth = document.documentElement.clientWidth;
     const screenHeight = window.innerHeight;
-
+  
     if (context && images.current[index]) {
+      // Clear the canvas before rendering
       context.clearRect(0, 0, screenWidth, screenHeight);
-      context.drawImage(
-        images.current[index],
-        0,
-        0,
-        screenWidth,
-        screenHeight
-      );
+  
+      const img = images.current[index];
+      const imgWidth = img.width;
+      const imgHeight = img.height;
+  
+      // Calculate scaling for the image to cover the canvas while maintaining the aspect ratio
+      const scale = Math.max(screenWidth / imgWidth, screenHeight / imgHeight);
+      const x = (screenWidth / 2) - (imgWidth / 2) * scale;
+      const y = (screenHeight / 2) - (imgHeight / 2) * scale;
+  
+      // Draw the image with the calculated scale and position
+      context.drawImage(img, x, y, imgWidth * scale, imgHeight * scale);
     }
   };
 
   const updateCanvasSize = () => {
     const canvas = canvasRef.current;
     const context = canvas?.getContext("2d");
-    const screenWidth = window.innerWidth;
+    const screenWidth = document.documentElement.clientWidth;
     const screenHeight = window.innerHeight;
 
     if (canvas && context) {
@@ -88,13 +94,18 @@ const HeroSequence = () => {
 
     const canvas = canvasRef.current;
     const context = canvas?.getContext("2d");
-    const screenWidth = window.innerWidth;
+    const screenWidth = document.documentElement.clientWidth;
     const screenHeight = window.innerHeight;
 
     if (canvas && context) {
       canvas.width = screenWidth;
       canvas.height = screenHeight;
     }
+
+     // Also set the containerRef width to match the visible viewport width
+  if (containerRef.current) {
+    containerRef.current.style.width = `${screenWidth}px`; // Set container width to visible viewport
+  }
 
     const updateImage = (progress: number) => {
       currentProgressRef.current = progress; // Store the current progress
@@ -142,13 +153,13 @@ const HeroSequence = () => {
         if (textPanel) {
           timelin1.fromTo(
             textPanel,
-            { opacity: 0, y: 50 },
+            { opacity: 0, y: 40},
             {
               opacity: 1,
-              y: 10,
+              y: -100,
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 50%",
+                start: "top 150%",
                 end: "bottom 30vh",
                 markers: false,
                 scrub: true,

@@ -16,6 +16,12 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: max-content;
+      
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        text-align: center;
+      };
       p {
         font-size: 18px;
         @screen md {
