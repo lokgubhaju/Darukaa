@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import cn from "classnames";
 import s from "./StackCards.module.scss";
 import Image from "next/image";
+import gsap from "gsap";
 
 interface CardProps {
   id: string;
@@ -59,6 +60,24 @@ const Card: React.FC<CardProps> = ({
 );
 
 const Panel: React.FC = () => {
+  const cardsRef = useRef<HTMLUListElement | null>(null);
+  useEffect(() => {
+    if (cardsRef.current) {
+      const cards = cardsRef.current.querySelectorAll("li");
+      gsap.to(cards, {
+        opacity: 0,
+        y: 0,
+          start: "top top",
+          end: "bottom 100vh", // Adjust scroll duration
+        duration: 1,
+        ease: "power2.out",
+        scrub: true,
+          pin: true,
+          pinSpacing: true,
+        markers:false,
+      });
+    }
+  }, []);
   const cards = [
     {
       id: "card-1",
@@ -117,7 +136,7 @@ const Panel: React.FC = () => {
   return (
     <main>
       <div className={cn(s["stack-cards__text"], "text-neutral-600")}>
-        <p className="h1-md-max md:h1">Unmatched Edge</p>
+        <p className="h1-md-max md:h1">Our Unmatched Edge</p>
       </div>
       <ul>
         {cards.map((card) => (

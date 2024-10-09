@@ -23,12 +23,15 @@ const MobileNavigation = () => {
   ];
   return (
     <div className={cn(s["mobile-navigation"])}>
+      <Link href="#info">
       <Image
         src={"/images/logo_mobile.png"}
         alt="Logo of Darukaa"
         width={60}
         height={60}
       />
+      
+      </Link>
       <div
         className={cn(s["hamburger-icon"], {
           [s["hamburger-icon__active"]]: isOpen,

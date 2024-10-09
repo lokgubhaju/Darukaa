@@ -166,7 +166,7 @@ export default function Home() {
           </iframe>
         </section> */}
 
-          <section className={cn(s["home__why-it-matters"], "mt-10 container")}>
+          <section id="info" className={cn(s["home__why-it-matters"], "mt-10 container")}>
             <GalleryCards />
           </section>
 

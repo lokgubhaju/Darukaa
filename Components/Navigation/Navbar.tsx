@@ -50,6 +50,7 @@ export default function Navbar() {
       ) : (
         <div className={cn(s["navigation__desktop"])} id="navbar-default">
           {/* <Logo />  */}
+          <Link href="#info">
           <Image
             src={"/images/logo.png"}
             alt="Logo of Darukaa"
@@ -57,6 +58,7 @@ export default function Navbar() {
             height={40}
             className="h-10"
           />
+          </Link>
           <ul className={cn(s["navigation__lists"])}>
             {menu.map((item, index) => (
               <li

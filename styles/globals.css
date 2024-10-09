@@ -71,9 +71,20 @@ body {
   }
 
   .container {
-    @apply max-w-screen-xl mx-auto px-0 overflow-visible;
+    /* @apply max-w-screen-xl mx-auto px-0 overflow-visible; */
+    max-width: 100% !important;
+    width: 94.5% !important;
+    margin: 0px auto ;
+    
   }
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 91% !important;
+    
+  }
+};
 
 @layer utilities {
   .text-balance {

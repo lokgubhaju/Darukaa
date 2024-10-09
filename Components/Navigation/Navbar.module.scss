@@ -2,9 +2,13 @@
   @apply w-full bg-gray sticky top-0 z-10;
   &__container {
     @apply flex justify-between relative container px-4 md:px-0 mx-auto;
+    
   }
   &__desktop{
-    @apply hidden lg:flex items-center justify-between md:w-full container;
+    @apply hidden lg:flex items-center justify-between md:w-full;
+    max-width: 100% !important;
+    width: 94.5% !important;
+    margin: 0px auto ;
   }
   &__mobile {
     @apply flex flex-wrap justify-between items-center w-full relative lg:hidden px-4;

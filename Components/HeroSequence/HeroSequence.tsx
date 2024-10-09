@@ -136,8 +136,8 @@ const HeroSequence = () => {
       const timelin1 = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top top",
-          end: `+=${window.innerHeight * 2}`,
+          start: "top 100vh",
+          end: "bottom 100vh",
           scrub: true,
           pin: true,
           markers: false,
