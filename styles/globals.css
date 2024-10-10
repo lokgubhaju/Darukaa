@@ -78,11 +78,16 @@ body {
     
   }
 }
-
+h1.title-main-banner{
+  font-size: calc(100% + 2rem);
+}
 @media screen and (max-width: 767px) {
   .container {
     width: 91% !important;
     
+  }
+  h1.title-main-banner{
+    font-size: calc(100% + 1rem);
   }
 };
 

@@ -64,17 +64,22 @@ const Panel: React.FC = () => {
   useEffect(() => {
     if (cardsRef.current) {
       const cards = cardsRef.current.querySelectorAll("li");
+      gsap.registerPlugin(ScrollTrigger);
+  
       gsap.to(cards, {
-        opacity: 0,
-        y: 0,
-          start: "top top",
+        scrollTrigger: {
+          trigger: cardsRef.current,
+          start: "top top", // Adjust as needed
           end: "bottom 100vh", // Adjust scroll duration
-        duration: 1,
-        ease: "power2.out",
-        scrub: true,
+          scrub: true,
           pin: true,
           pinSpacing: true,
-        markers:false,
+          markers: false, // Enable markers for debugging
+        },
+        opacity: 1, // Set initial opacity for fade-in effect
+        y: 50, // Adjust based on how you want cards to stack or move
+        duration: 1,
+        ease: "power2.out",
       });
     }
   }, []);

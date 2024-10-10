@@ -42,7 +42,7 @@ export default function Home() {
               <source src="/videos/banner_video.mp4" type="video/mp4" />
             </video>
             <div className={cn(s["home__hero__overlay"])}>
-              <h1 className="text-h1-md-max md:text-h1">
+              <h1 className="text-h1-md-max md:text-h1 title-main-banner">
                 Catalyzing Climate Finance
               </h1>
               <p>Innovating Carbon & Biodiversity Solutions</p>

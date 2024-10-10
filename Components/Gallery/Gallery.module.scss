@@ -19,7 +19,7 @@
           position: absolute;
           bottom: 0;
           @screen md{
-            font-size: 22px;
+            font-size: 18px;
           }
         }
       }
@@ -36,6 +36,8 @@
       img, video{
         aspect-ratio: 1/1;
         object-fit: fill;
+        height: 77vh !important;
+        width: 100% !important;
 
         @media screen and (max-width: 767px) {
           aspect-ratio: 2/3;

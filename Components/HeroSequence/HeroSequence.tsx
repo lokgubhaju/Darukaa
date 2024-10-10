@@ -137,7 +137,7 @@ const HeroSequence = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 100vh",
-          end: "bottom 100vh",
+          end: `+=${window.innerHeight * 2}`,
           scrub: true,
           pin: true,
           markers: false,
@@ -159,7 +159,7 @@ const HeroSequence = () => {
               y: -100,
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 150%",
+                start: "top 100vh",
                 end: "bottom 30vh",
                 markers: false,
                 scrub: true,
@@ -170,6 +170,12 @@ const HeroSequence = () => {
           );
         }
       });
+
+      const refreshScrollTrigger = () => {
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 300); // Increase delay to 300ms for more stability
+      };
       // Refresh ScrollTrigger after registering the text panels
       // refreshScrollTrigger();
 

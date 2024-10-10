@@ -169,7 +169,7 @@ mm.add("(min-width: 768px)", () => {
       {
         opacity: 1,
         y: 0,
-        delay: index * 0.2,
+        delay: index * 0,
         scrollTrigger: {
           trigger: textPanel,
           start: "top 80vh",   // Start value for larger screens
