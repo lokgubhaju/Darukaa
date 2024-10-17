@@ -137,6 +137,78 @@ const LottieAnimation = () => {
 
     let mm = gsap.matchMedia();
 
+
+mm.add("(min-width: 1300px)", () => {
+  // Animation for larger screens
+  textPanelRefs.current.forEach((textPanel, index) => {
+    gsap.fromTo(
+      textPanel,
+      { opacity: 0, y:-640 },
+      {
+        opacity: 1,
+        y: -540,
+        delay: index * 0,
+        height:'65vh',
+        scrollTrigger: {
+          trigger: textPanel,
+          start: "top 80vh",   // Start value for larger screens
+          end: "bottom 10vh",  // End value for larger screens
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+});
+mm.add("(max-width: 1299px)", () => {
+  // Animation for larger screens
+  textPanelRefs.current.forEach((textPanel, index) => {
+    gsap.fromTo(
+      textPanel,
+      { opacity: 0, y:-500 },
+      {
+        opacity: 1,
+        y: -400,
+        delay: index * 0,
+        height:'65vh',
+        scrollTrigger: {
+          trigger: textPanel,
+          start: "top 80vh",   // Start value for larger screens
+          end: "bottom 10vh",  // End value for larger screens
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+});
+
+mm.add("(max-width: 991px)", () => {
+  // Animation for larger screens
+  textPanelRefs.current.forEach((textPanel, index) => {
+    gsap.fromTo(
+      textPanel,
+      { opacity: 0, y:-350 },
+      {
+        opacity: 1,
+        y: -250,
+        delay: index * 0,
+        height:'65vh',
+        scrollTrigger: {
+          trigger: textPanel,
+          start: "top 80vh",   // Start value for larger screens
+          end: "bottom 10vh",  // End value for larger screens
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+});
+
 mm.add("(max-width: 767px)", () => {
   // Animation for screens with max width of 767px
   textPanelRefs.current.forEach((textPanel, index) => {
@@ -151,29 +223,6 @@ mm.add("(max-width: 767px)", () => {
           trigger: containerRef.current,
           start: "top 90vh",   // Different start for small screens
           end: "bottom 20vh",  // Different end for small screens
-          scrub: true,
-          markers: false,
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-  });
-});
-
-mm.add("(min-width: 768px)", () => {
-  // Animation for larger screens
-  textPanelRefs.current.forEach((textPanel, index) => {
-    gsap.fromTo(
-      textPanel,
-      { opacity: 0, y: 0 },
-      {
-        opacity: 1,
-        y: 0,
-        delay: index * 0,
-        scrollTrigger: {
-          trigger: textPanel,
-          start: "top 80vh",   // Start value for larger screens
-          end: "bottom 10vh",  // End value for larger screens
           scrub: true,
           markers: false,
           toggleActions: "play none none reverse",

@@ -29,7 +29,7 @@
   padding-top: calc(var(--index) * var(--card-top-offset));
   top: 150px;
   @screen md {
-    top: 220px;
+    top: 150px;
     margin-bottom: 20px
   }
 }
@@ -53,6 +53,12 @@
   &__headline {
     font-size: 2.5rem;
     margin: 0;
+    @media screen and (max-width: 1300px) {
+      font-size: 2rem;
+    };
+    @media screen and (max-width: 991px) {
+      font-size: 1.6rem;
+    };
   }
   &__body-copy {
     font-weight: 300;
@@ -76,7 +82,13 @@
   grid-area: img;
   overflow: hidden;
   border-radius: 1em;
-  height:45vh
+  height:45vh;
+  @media screen and (max-width: 991px) {
+    height:100%;
+  };
+  @media screen and (max-width: 767px) {
+    height:228px;
+  };
 }
 
 
